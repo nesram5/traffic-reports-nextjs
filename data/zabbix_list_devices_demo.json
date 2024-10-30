@@ -1,0 +1,8 @@
+{
+    "Fist-device": {
+        "link": "http://somewhere/zabbix/history.php?itemids%5B0%5D=481902&action=showvalues&plaintext=As+plain+text",
+        "name": "Unique name here",
+        "type": "Type",
+        "group": "Group"
+    }
+}

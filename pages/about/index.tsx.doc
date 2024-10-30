@@ -1,0 +1,137 @@
+'use client'
+import DefaultLayout from "@/layouts/default";
+import React, { useState, useEffect } from 'react'
+import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@nextui-org/react"
+import dynamic from 'next/dynamic'
+
+const AceEditor = dynamic(async () => {
+  const ace = await import('react-ace')
+  await import('ace-builds/src-noconflict/mode-javascript')
+  await import('ace-builds/src-noconflict/theme-monokai')
+  return ace
+}, { ssr: false })
+
+// Mock function to simulate loading JSON data with groups
+const loadJsonData = async (file: string) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve([
+        {
+          groupName: "Group 1",
+          links: [
+            { key: 'option1', label: 'Option 1', color: 'bg-red-200' },
+            { key: 'option2', label: 'Option 2', color: 'bg-red-300' },
+          ]
+        },
+        {
+          groupName: "Group 2",
+          links: [
+            { key: 'option3', label: 'Option 3', color: 'bg-blue-200' },
+            { key: 'option4', label: 'Option 4', color: 'bg-blue-300' },
+          ]
+        },
+        {
+          groupName: "Group 3",
+          links: [
+            { key: 'option5', label: 'Option 5', color: 'bg-green-200' },
+            { key: 'option6', label: 'Option 6', color: 'bg-green-300' },
+          ]
+        },
+      ])
+    }, 500)
+  })
+}
+
+export default function EditorPage() {
+  const [topOptions, setTopOptions] = useState([])
+  const [rightOptions, setRightOptions] = useState([])
+  const [bottomOptions, setBottomOptions] = useState([])
+  const [leftOptions, setLeftOptions] = useState([])
+  const [editorContent, setEditorContent] = useState('')
+
+  useEffect(() => {
+    const loadOptions = async () => {
+      setTopOptions(await loadJsonData('top.json'))
+      setRightOptions(await loadJsonData('right.json'))
+      setBottomOptions(await loadJsonData('bottom.json'))
+      setLeftOptions(await loadJsonData('left.json'))
+    }
+    loadOptions()
+  }, [])
+
+  const createDropdown = (options, placeholder, placement) => (
+    <Dropdown placement={placement}>
+      <DropdownTrigger>
+        <Button 
+          variant="bordered" 
+          className="capitalize"
+        >
+          {placeholder}
+        </Button>
+      </DropdownTrigger>
+      <DropdownMenu aria-label={placeholder}>
+        {options.map((group, index) => (
+          <DropdownItem key={index} className="p-0" textValue={group.groupName}>
+            <div className="font-bold px-2 py-1">{group.groupName}</div>
+            {group.links.map((link) => (
+              <DropdownItem key={link.key} className={`px-4 py-1 ${link.color}`}>
+                {link.label}
+              </DropdownItem>
+            ))}
+          </DropdownItem>
+        ))}
+      </DropdownMenu>
+    </Dropdown>
+  )
+
+  return (
+    <DefaultLayout>
+      <div className="relative flex flex-col h-full">
+        <div className="flex-grow flex items-center justify-center relative">
+          {/* Top Dropdowns */}
+          <div className="absolute top-4 left-4 right-4 flex justify-between z-30">
+            {createDropdown(topOptions, "Top Left", "bottom-start")}
+            {createDropdown(topOptions, "Top Center", "bottom")}
+            {createDropdown(topOptions, "Top Right", "bottom-end")}
+          </div>
+
+          {/* Left Dropdowns */}
+          <div className="absolute top-20 bottom-20 left-4 flex flex-col justify-between z-30">
+            {createDropdown(leftOptions, "Left Top", "right-start")}
+            {createDropdown(leftOptions, "Left Center", "right")}
+            {createDropdown(leftOptions, "Left Bottom", "right-end")}
+          </div>
+
+          {/* Right Dropdowns */}
+          <div className="absolute top-20 bottom-20 right-4 flex flex-col justify-between z-30">
+            {createDropdown(rightOptions, "Right Top", "left-start")}
+            {createDropdown(rightOptions, "Right Center", "left")}
+            {createDropdown(rightOptions, "Right Bottom", "left-end")}
+          </div>
+
+          {/* Bottom Dropdowns */}
+          <div className="absolute bottom-4 left-4 right-4 flex justify-between z-30">
+            {createDropdown(bottomOptions, "Bottom Left", "top-start")}
+            {createDropdown(bottomOptions, "Bottom Center", "top")}
+            {createDropdown(bottomOptions, "Bottom Right", "top-end")}
+          </div>
+
+          {/* Text Editor */}
+          <div className="w-3/4 h-3/4 z-20">
+            <AceEditor
+              mode="javascript"
+              theme="monokai"
+              onChange={setEditorContent}
+              name="code-editor"
+              editorProps={{ $blockScrolling: true }}
+              setOptions={{
+                useWorker: false
+              }}
+              style={{ width: '100%', height: '100%' }}
+            />
+          </div>
+        </div>
+      </div>
+    </DefaultLayout>
+  )
+}
