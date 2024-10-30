@@ -9,6 +9,7 @@
 		"lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix"
 	},
 	"dependencies": {
+		"@next/env": "^15.0.2",
 		"@nextui-org/react": "^2.4.8",
 		"@react-aria/visually-hidden": "3.8.12",
 		"ace-builds": "^1.36.3",

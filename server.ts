@@ -1,3 +1,4 @@
+import './envConfig.ts'
 import {createServer} from 'https';
 import http from 'http';
 import { WebSocketServer } from 'ws';
@@ -15,7 +16,7 @@ const zabbix_list_devices = path.join(process.cwd(), 'data/zabbix_list_devices.j
 console.log(snmp_list_devices);
 const port: number = Number(process.env.PORT) || 443;
 const httpPort: number = 80;
-const address: string = process.env.SERVER || '192.168.1.7';
+const address: string = process.env.SERVER || '192.168.0.1';
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })

@@ -1,3 +1,4 @@
+import './envConfig.ts';
 import puppeteer  from 'puppeteer-core';
 import path from 'path';
 import * as os from 'os';
