@@ -1,4 +1,4 @@
-import './envConfig.ts';
+import '@/envConfig.ts';
 import fs from 'fs';
 import path from 'path';
 import snmp from 'snmp-native';

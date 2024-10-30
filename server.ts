@@ -1,4 +1,4 @@
-import './envConfig.ts'
+import '@/envConfig.ts'
 import {createServer} from 'https';
 import http from 'http';
 import { WebSocketServer } from 'ws';
