@@ -1,4 +1,4 @@
-import '@/envConfig'
+import '@/envConfig';
 import {createServer} from 'https';
 import http from 'http';
 import { WebSocketServer } from 'ws';
