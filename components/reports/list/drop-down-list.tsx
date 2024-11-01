@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { CodeBlock } from '../../copy-box/copy';
+import '@/envConfig'
+
+const address: string = process.env.SERVER || '192.168.0.1';
 // Data interfaces
 interface IItem {
     first: string;
@@ -146,7 +149,7 @@ export const TrafficReportDropDown: React.FC = () => {
         
         // Establish a WebSocket connection for real-time updates
         const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
-        const socket = new WebSocket(`${protocol}://192.168.0.7/api/traffic-updates`);
+        const socket = new WebSocket(`${protocol}://${address}/api/traffic-updates`);
 
         socket.onmessage = (event) => {
             const updatedData: IMonthGroup[] = JSON.parse(event.data);
