@@ -1,4 +1,3 @@
-import '@/envConfig';
 import React, { useState, useEffect } from 'react';
 import { CodeBlock } from '../../copy-box/copy';
 
