@@ -168,7 +168,7 @@ export const TrafficReportDropDown: React.FC = () => {
     }, []);
 
     return (
-        <div>
+        <div className='flex flex-col-reverse'>
             {monthData.map((monthGroup, index) => (
                 <MonthGroup key={index} month={monthGroup.month} dayGroups={monthGroup.dayGroups} />
             ))}
