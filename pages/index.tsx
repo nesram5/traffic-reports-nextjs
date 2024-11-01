@@ -19,7 +19,7 @@ export default function Component() {
                     <GetReport />
                   </div>
                 )}
-            <section className="w-full">
+            <section className="w-full, flex flex-col-reverse">
           <TrafficReportDropDown />
           </section>
         </main>
