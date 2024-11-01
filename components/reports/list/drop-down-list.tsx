@@ -1,6 +1,7 @@
+import '@/envConfig';
 import React, { useState, useEffect } from 'react';
 import { CodeBlock } from '../../copy-box/copy';
-import '@/envConfig'
+
 
 const address: string = process.env.SERVER || '192.168.0.1';
 // Data interfaces
