@@ -14,9 +14,9 @@ const snmp_list_devices = path.join(process.cwd(), 'data/snmp_list_devices.json'
 const zabbix_list_devices = path.join(process.cwd(), 'data/zabbix_list_devices.json');
 
 console.log(snmp_list_devices);
-const port: number = Number(process.env.PORT) || 443;
-const httpPort: number = 80;
-const address: string = process.env.SERVER || '192.168.0.1';
+const port: number = Number(process.env.PORT) || 3000;
+const httpPort: number = 3001;
+const address: string = process.env.SERVER || 'localhost';
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
@@ -32,9 +32,9 @@ app.prepare().then(() => {
     handle(req, res, parsedUrl)
   }).listen(port, address)
   
-    connectDB();
-    fetchTrafficDataFromDB();
-    scheduleExecution();
+    //connectDB();
+    //fetchTrafficDataFromDB();
+    //scheduleExecution();
 
     const wss = new WebSocketServer({ server: httpsServer, path: '/api/traffic-updates' });
     wss.on('connection', (ws) => {

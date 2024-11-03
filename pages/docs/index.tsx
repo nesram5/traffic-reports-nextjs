@@ -1,57 +1,57 @@
-"use client"
+"use client";
 
-import React, { useState, useEffect } from "react"
-import { Button } from "@nextui-org/react"
-import AceEditor from "react-ace"
+import React, { useState, useEffect } from "react";
+import { Button } from "@nextui-org/react";
+import AceEditor from "react-ace";
 import DefaultLayout from "@/layouts/default";
 
-import "ace-builds/src-noconflict/mode-json"
-import "ace-builds/src-noconflict/theme-monokai"
+import "ace-builds/src-noconflict/mode-json";
+import "ace-builds/src-noconflict/theme-monokai";
 
 export default function DocsPage() {
-  const [jsonContent, setJsonContent] = useState("")
+  const [jsonContent, setJsonContent] = useState("");
 
   useEffect(() => {
     // Simulating fetching JSON from backend
     const fetchJson = async () => {
       // Replace this with actual API call
-      const response = await fetch("/api/get-list-devices-zabbix")
-      const data = await response.json()
-      setJsonContent(JSON.stringify(data, null, 2))
+      const response = await fetch("/api/get-list-devices-zabbix");
+      const data = await response.json();
+      setJsonContent(JSON.stringify(data, null, 2));
     }
 
-    fetchJson()
+    fetchJson();
   }, [])
 
   const handleEditorChange = (newValue: string) => {
-    setJsonContent(newValue)
+    setJsonContent(newValue);
   }
 
   const handleTest = () => {
     // Implement test logic here
-    console.log("Testing edited JSON:", jsonContent)
+    console.log("Testing edited JSON:", jsonContent);
   }
 
   const handleSubmit = async () => {
     // Implement submit logic here
-    console.log("Submitting edited JSON:", jsonContent)
-    Replace this with actual API call
+    console.log("Submitting edited JSON:", jsonContent);
+    //Replace this with actual API call
     await fetch("/api/push-list-devices-zabbix", {
       method: "POST",
        headers: { "Content-Type": "application/json" },
       body: jsonContent
      })
-
-    const fetchZabbixfile = async () => {
-      const response = await fetch("/api/get-list-devices-zabbix")
-      const data = await response.json()
-      setJsonContent(JSON.stringify(data, null, 2))
-    }
-    const fetchSnmpfile = async () => {
-      const response = await fetch("/api/get-list-devices-snmp")
-      const data = await response.json()
-      setJsonContent(JSON.stringify(data, null, 2))
-    }
+  }
+  
+  const fetchZabbixfile = async () => {
+    const response = await fetch("/api/get-list-devices-zabbix")
+    const data = await response.json()
+    setJsonContent(JSON.stringify(data, null, 2))
+  }
+  const fetchSnmpfile = async () => {
+    const response = await fetch("/api/get-list-devices-snmp")
+    const data = await response.json()
+    setJsonContent(JSON.stringify(data, null, 2))
   }
 
   return (

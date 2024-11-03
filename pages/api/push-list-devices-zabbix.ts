@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
+import path from 'path';
 const zabbixFile = path.join(process.cwd(), 'data/zabbix_list_devices.json');
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -16,7 +17,7 @@ const oldFileName = 'zabbix_list_devices.json';
           console.error('Error renaming file:', err);
       } else {
           console.log('File renamed successfully');
-      }
+      };
 
       const jsonData = JSON.stringify(zabbix_list_devices);
 
@@ -26,7 +27,8 @@ const oldFileName = 'zabbix_list_devices.json';
               console.error('Error writing file', err);
           } else {
               console.log('File written successfully');
-          }
+          };
+        });
       });
-  });
+  }
 }

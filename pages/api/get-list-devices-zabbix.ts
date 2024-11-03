@@ -1,10 +1,12 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import path from 'path';
+import fs from 'fs/promises'; 
 const zabbixFile = path.join(process.cwd(), 'data/zabbix_list_devices.json');
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'GET') {
     try {
-      const data = await fs.readFile(zabbixFile, 'utf8');
+      const data: string = await fs.readFile(zabbixFile, 'utf8');
       const deviceList = JSON.parse(data);
       return res.status(200).json(deviceList);
     } catch (error: any) {
