@@ -15,7 +15,7 @@ export default function DocsPage() {
     // Simulating fetching JSON from backend
     const fetchJson = async () => {
       // Replace this with actual API call
-      const response = await fetch("/api/")
+      const response = await fetch("/api/get-list-devices-zabbix")
       const data = await response.json()
       setJsonContent(JSON.stringify(data, null, 2))
     }
@@ -34,13 +34,24 @@ export default function DocsPage() {
 
   const handleSubmit = async () => {
     // Implement submit logic here
-    //console.log("Submitting edited JSON:", jsonContent)
-    // Replace this with actual API call
-    // await fetch("/api/submitJson", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: jsonContent
-    // })
+    console.log("Submitting edited JSON:", jsonContent)
+    Replace this with actual API call
+    await fetch("/api/push-list-devices-zabbix", {
+      method: "POST",
+       headers: { "Content-Type": "application/json" },
+      body: jsonContent
+     })
+
+    const fetchZabbixfile = async () => {
+      const response = await fetch("/api/get-list-devices-zabbix")
+      const data = await response.json()
+      setJsonContent(JSON.stringify(data, null, 2))
+    }
+    const fetchSnmpfile = async () => {
+      const response = await fetch("/api/get-list-devices-snmp")
+      const data = await response.json()
+      setJsonContent(JSON.stringify(data, null, 2))
+    }
   }
 
   return (
@@ -50,8 +61,8 @@ export default function DocsPage() {
         <div className="w-1/6 bg-gray-100 p-4 overflow-y-auto">
           <h3 className="text-lg font-semibold mb-4">Left Column</h3>
           <div className="space-y-2">
-            <Button size="sm" color="primary" className="w-full">Demo Link 1</Button>
-            <Button size="sm" color="primary" className="w-full">Demo Link 2</Button>
+            <Button size="sm" color="primary" className="w-full" onClick={fetchZabbixfile} >Editar archivo Zabbix_devices</Button>
+            <Button size="sm" color="primary" className="w-full"onClick={fetchSnmpfile} >Editar archivo SNMP_devices</Button>
             <Button size="sm" color="primary" className="w-full">Demo Link 3</Button>
           </div>
         </div>
