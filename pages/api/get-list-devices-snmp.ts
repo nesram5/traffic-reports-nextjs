@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import path from 'path';
-import fs from 'fs';
+import fs from 'fs/promises'; 
 const snmpFile = path.join(process.cwd(), 'data/snmp_list_devices.json');
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
