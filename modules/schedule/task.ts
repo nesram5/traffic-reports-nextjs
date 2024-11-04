@@ -4,7 +4,7 @@ import { autoGetReportZabbix } from '../zabbix-report/main';
 // Automatic execute functions
 async function executeTwicePerHour() {
   await autoGetReportZabbix();
-  fetchTrafficDataFromDB();
+  setInterval(fetchTrafficDataFromDB, 1000)
   console.log("Function executed at:", new Date().toLocaleTimeString());
 }
 

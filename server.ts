@@ -32,9 +32,9 @@ app.prepare().then(() => {
     handle(req, res, parsedUrl)
   }).listen(port, address)
   
-    //connectDB();
-    //fetchTrafficDataFromDB();
-    //scheduleExecution();
+    connectDB();
+    fetchTrafficDataFromDB();
+    scheduleExecution();
 
     const wss = new WebSocketServer({ server: httpsServer, path: '/api/traffic-updates' });
     wss.on('connection', (ws) => {
@@ -50,14 +50,14 @@ app.prepare().then(() => {
 
     // Broadcast updates to all clients every 1 minute
     setInterval(() => {
-        //fetchTrafficDataFromDB()
+        fetchTrafficDataFromDB()
         const updatedData = getTrafficData();
         wss.clients.forEach((client) => {
             if (client.readyState === client.OPEN) {
                 client.send(JSON.stringify(updatedData));
             }
         });
-    }, 60000);
+    }, 6000);
     // Start HTTP server to redirect to HTTPS
     const httpServer = http.createServer((req, res) => {
         res.writeHead(301, { Location: `https://${address}:${port}${req.url}` });

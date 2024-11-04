@@ -1,69 +1,58 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js + NextUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "Traffic Reports",
+  description: "Consulta el trafico de forma inmediata.",
   navItems: [
     {
-      label: "Home",
+      label: "Traffic Reports",
       href: "/",
     },
     {
-      label: "Docs",
-      href: "/docs",
+      label: "Configuracion",
+      href: "/config-page",
     },
     {
-      label: "Pricing",
-      href: "/pricing",
+      label: "ONU's Config",
+      href: "/onu-config",
     },
     {
-      label: "Blog",
-      href: "/blog",
+      label: "Caluladora BCV",
+      href: "/calculator",
     },
     {
-      label: "About",
-      href: "/about",
+      label: "Login",
+      href: "/login",
+    },
+    {
+      label: "NetcomBook",
+      href: "http://10.3.0.253",
     },
   ],
   navMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
+      label: "Traffic Reports",
+      href: "/",
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "Configuracion",
+      href: "/config-page",
     },
     {
-      label: "Projects",
-      href: "/projects",
+      label: "ONU's Config",
+      href: "/onu-config",
     },
     {
-      label: "Team",
-      href: "/team",
+      label: "Caluladora BCV",
+      href: "/calculator",
     },
     {
-      label: "Calendar",
-      href: "/calendar",
+      label: "Login",
+      href: "/login",
     },
     {
-      label: "Settings",
-      href: "/settings",
-    },
-    {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
-    },
+      label: "NetcomBook",
+      href: "http://10.3.0.253",
+    },    
   ],
-  links: {
-    github: "https://github.com/nextui-org/nextui",
-    twitter: "https://twitter.com/getnextui",
-    docs: "https://nextui-docs-v2.vercel.app",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
-  },
 };

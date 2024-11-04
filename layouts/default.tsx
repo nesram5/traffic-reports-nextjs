@@ -1,4 +1,3 @@
-import { Link } from "@nextui-org/link";
 import WaveAnimatedBackgroundLayout  from './background';
 import { Head } from "./head";
 
