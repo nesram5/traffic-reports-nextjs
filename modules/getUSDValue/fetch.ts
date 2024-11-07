@@ -19,16 +19,16 @@ export async function extractUsdValue() {
             throw new Error('USD price not found in the response');
         }
 
-        const usdPrice = data.monitors.usd.price;
+        const usdValue = data.monitors.usd.price;
 
-        fs.writeFile(usdFile, JSON.stringify({ usdPrice }), (err) => {
+        fs.writeFile(usdFile, JSON.stringify({ usdValue }), (err) => {
             if (err) {
                 console.error('Error writing file', err);
             } else {
-                console.log('File written successfully');
+                console.log('usdValue File written successfully');
             }
         });
     } catch (error) {
-        console.error('Error fetching or saving data:', error);
+        console.error('Error fetching usdValue or saving data:', error);
     }
 }

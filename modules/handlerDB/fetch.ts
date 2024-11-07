@@ -62,7 +62,7 @@ export async function fetchTrafficDataFromDB() {
 
         // Write to cache file
         fs.writeFileSync(cacheFile, JSON.stringify(monthData, null, 2));
-        console.log('Traffic data cache file updated');
+        //console.log('Traffic data cache file updated');
 
     } catch (err) {
         console.error('Error fetching traffic data:', err);

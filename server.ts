@@ -15,8 +15,8 @@ const snmp_list_devices = path.join(process.cwd(), 'data/snmp_list_devices.json'
 const zabbix_list_devices = path.join(process.cwd(), 'data/zabbix_list_devices.json');
 
 console.log(snmp_list_devices);
-const port: number = Number(process.env.PORT) || 3000;
-const httpPort: number = 3001;
+const port: number = Number(process.env.PORT) || 443;
+const httpPort: number = 80;
 const address: string = process.env.SERVER || '192.168.1.3';
 
 const dev = process.env.NODE_ENV !== 'production'
@@ -34,10 +34,9 @@ app.prepare().then(() => {
   }).listen(port, address)
     
     extractUsdValue()
-    /*
-    //connectDB();
-    //fetchTrafficDataFromDB();
-    //scheduleExecution();
+    connectDB();
+    fetchTrafficDataFromDB();
+    scheduleExecution();
 
     const wss = new WebSocketServer({ server: httpsServer, path: '/api/traffic-updates' });
     wss.on('connection', (ws) => {
@@ -60,7 +59,7 @@ app.prepare().then(() => {
                 client.send(JSON.stringify(updatedData));
             }
         });
-    }, 6000);*/
+    }, 6000);
     // Start HTTP server to redirect to HTTPS
     const httpServer = http.createServer((req, res) => {
         res.writeHead(301, { Location: `https://${address}:${port}${req.url}` });
