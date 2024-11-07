@@ -46,12 +46,12 @@ export async function extractUsdValue() {
     const usdValue = await page.evaluate(() => {
         // Select all <div> elements with the class "border-2 rounded-lg shadow p-2 text-center overflow-hidden"
         const bcvSections = document.querySelectorAll('div.border-2.rounded-lg.shadow.p-2.text-center.overflow-hidden');
-        let bcvSection = null;
+        let bcvSection: any;
     
         // Iterate through the selected <div> elements to find the one containing "BCV (Oficial)"
         bcvSections.forEach(section => {
             const heading = section.querySelector('h3');
-            if (heading && heading.textContent.trim() === 'BCV (Oficial)') {
+            if (heading && heading.textContent && heading.textContent.trim() === 'BCV (Oficial)') {
                 bcvSection = section;
             }
         });
@@ -59,9 +59,9 @@ export async function extractUsdValue() {
         if (bcvSection) {
             // Select the <p> element that contains the BS value within the "BCV (Oficial)" section
             const usdElement = bcvSection.querySelector('p.font-bold.text-xl');
-            if (usdElement) {
+            if (usdElement && usdElement.textContent) {
                 // Extract the text content and remove the 'Bs = ' part
-                const textContent = usdElement.textContent!.trim();
+                const textContent = usdElement.textContent.trim();
                 const value = textContent.replace('Bs = ', '').replace(/,/g, '.'); // Replace comma with period
                 const parsedValue = parseFloat(value);
                 return parsedValue;
