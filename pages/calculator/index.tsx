@@ -15,7 +15,7 @@ export default function IndexPage() {
     fetch('/api/get-usd-bcv')
       .then(response => response.json())
       .then(data => {
-        setBcvUsdValue(Number(data));
+        setBcvUsdValue(Number(data.usdValue));
       })
       .catch(error => {
         console.error('Error fetching USD value:', error);
