@@ -8,7 +8,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const date = Date();
 const newFileName = path.join(process.cwd(), `data/zabbix_list_devices${date}.json`);
 const oldFileName = path.join(process.cwd(), 'data/zabbix_list_devices.json');
-
+/* NOT for production
   if (req.method === 'POST') {
     const { zabbix_list_devices } = req.body;
 
@@ -30,5 +30,5 @@ const oldFileName = path.join(process.cwd(), 'data/zabbix_list_devices.json');
           };
         });
       });
-  }
+  }*/
 }
