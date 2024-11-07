@@ -58,10 +58,11 @@ export async function extractUsdValue() {
 
     await browser.close();
 
-    fs.writeFile(usdFile, JSON.stringify( usdValue ), (err) => {
+    fs.writeFile(usdFile, JSON.stringify(usdValue), (err) => {
         if (err) {
             console.error('Error writing file', err);
         } else {
+            console.log('File written successfully');
         }
     });
 }
