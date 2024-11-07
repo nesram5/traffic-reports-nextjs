@@ -65,8 +65,7 @@ export default function IndexPage() {
               <p className="text-base font-extralight">{result2?.toFixed(2)} Bs</p>
               <p className="text-2xl font-semibold">Total</p>
               <p className="text-2xl font-bold">{totalResult.toFixed(2)} Bs</p>
-              <p className="text-sm font-extralight my-1.5">Nota importante: Si el pago se realiza una parte en USD en efectivo
-                y otra en BS, se sigue sumando el IGTF del monto total en USD</p>
+              <p className="text-sm font-extralight my-1.5">Nota importante: Si se paga una parte en USD y otra en bolívares, el IGTF se aplica sobre el monto total en USD.</p>
             </div>
           )}
         </CardBody>
