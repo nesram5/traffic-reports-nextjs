@@ -1,112 +1,34 @@
-import puppeteer  from 'puppeteer-core';
 import path from 'path';
 import fs from 'fs';
-import * as os from 'os';
-import { saveToLog } from '../logger/log';
 
 
 export async function extractUsdValue() {
     const usdFile = path.join(process.cwd(), 'data/usd_bcv.json');
-    const browserPath = pathToBrowser(); // Assuming this function is defined elsewhere
-
-    let browser, page;
+    const apiUrl = 'https://pydolarve.org/api/v1/dollar?page=bcv';
 
     try {
-        browser = await puppeteer.launch({
-            executablePath: browserPath,
-            args: [
-                '--disable-setuid-sandbox',
-                '--no-first-run',
-                '--no-sandbox',
-                '--ignore-certificate-errors'
-            ],
-            headless: true
-        });
-
-        page = await browser.newPage();
-
-        // Navigate to the website
-        const response = await page.goto('https://monitordolarvenezuela.com', {
-            waitUntil: 'domcontentloaded',
-            timeout: 10000,
-        });
-
-        if (response && response.ok()) {
-            console.log('Page loaded successfully:', page.url());
-        } else {
-            console.log('Failed to load the page. Status code:', response ? response.status() : 'Unknown');
+        // Fetch the data from the API
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
+
+        let data = await response.json();
+        // Extract the price value from the usd object
+        if (!data.monitors.usd || !data.monitors.usd.price) {
+            throw new Error('USD price not found in the response');
+        }
+
+        const usdPrice = data.monitors.usd.price;
+
+        fs.writeFile(usdFile, JSON.stringify({ usdPrice }), (err) => {
+            if (err) {
+                console.error('Error writing file', err);
+            } else {
+                console.log('File written successfully');
+            }
+        });
     } catch (error) {
-        console.error('Error connecting to the page:', error);
-        saveToLog(`Error connecting to the page: ${getCurrentTimestamp()}`); // Assuming this function is defined elsewhere
-        return "Cannot connect to the web";
+        console.error('Error fetching or saving data:', error);
     }
-    await page.waitForNavigation();
-
-    const usdValue = await page.evaluate(() => {
-        // Select all <div> elements with the class "border-2 rounded-lg shadow p-2 text-center overflow-hidden"
-        const bcvSections = document.querySelectorAll('div.border-2.rounded-lg.shadow.p-2.text-center.overflow-hidden');
-        let bcvSection: any;
-    
-        // Iterate through the selected <div> elements to find the one containing "BCV (Oficial)"
-        bcvSections.forEach(section => {
-            const heading = section.querySelector('h3');
-            if (heading && heading.textContent && heading.textContent.trim() === 'BCV (Oficial)') {
-                bcvSection = section;
-            }
-        });
-    
-        if (bcvSection) {
-            // Select the <p> element that contains the BS value within the "BCV (Oficial)" section
-            const usdElement = bcvSection.querySelector('p.font-bold.text-xl');
-            if (usdElement && usdElement.textContent) {
-                // Extract the text content and remove the 'Bs = ' part
-                const textContent = usdElement.textContent.trim();
-                const value = textContent.replace('Bs = ', '').replace(/,/g, '.'); // Replace comma with period
-                const parsedValue = parseFloat(value);
-                return parsedValue;
-            }
-        }
-        return null;
-    });
-
-    await browser.close();
-
-    fs.writeFile(usdFile, JSON.stringify({ usdValue }), (err) => {
-        if (err) {
-            console.error('Error writing file', err);
-        } else {
-            console.log('File written successfully');
-        }
-    });
-}
-
-function pathToBrowser(): any {
-    let winBrowser = path.join('C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe');
-    let linuxBrowser = path.join('/usr/bin/chromium-browser');
-    let pathToBrowser: any;
-    if(isOS('windows')){
-        pathToBrowser = winBrowser;
-    } else{
-        pathToBrowser = linuxBrowser;
-    }
-    return pathToBrowser;
-}
-
-function isOS(targetOS: 'windows' | 'linux'): boolean {
-    const platform = os.platform();
-    return (targetOS === 'windows' && platform === 'win32') || 
-           (targetOS === 'linux' && platform === 'linux');
-}
-
-export function getCurrentTimestamp() {
-    const now = new Date();
-    const year = now.getFullYear();
-    const month = String(now.getMonth() + 1).padStart(2, '0');
-    const day = String(now.getDate()).padStart(2, '0');
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
-
-    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 }
