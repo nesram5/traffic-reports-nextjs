@@ -6,8 +6,8 @@ const zabbixFile = path.join(process.cwd(), 'data/zabbix_list_devices.json');
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   // Define the old and new file names
   const date = Date();
-const newFileName = `zabbix_list_devices${date}.json`;
-const oldFileName = 'zabbix_list_devices.json';
+const newFileName = path.join(process.cwd(), `data/zabbix_list_devices${date}.json`);
+const oldFileName = path.join(process.cwd(), 'data/zabbix_list_devices.json');
 
   if (req.method === 'POST') {
     const { zabbix_list_devices } = req.body;
