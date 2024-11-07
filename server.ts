@@ -9,6 +9,7 @@ import next from 'next';
 import { connectDB } from './modules/handlerDB/connect';
 import { fetchTrafficDataFromDB } from './modules/handlerDB/fetch';
 import { scheduleExecution } from './modules/schedule/task';
+import { extractUsdValue } from './modules/getUSDValue/fetch';
  
 const snmp_list_devices = path.join(process.cwd(), 'data/snmp_list_devices.json');
 const zabbix_list_devices = path.join(process.cwd(), 'data/zabbix_list_devices.json');
@@ -16,7 +17,7 @@ const zabbix_list_devices = path.join(process.cwd(), 'data/zabbix_list_devices.j
 console.log(snmp_list_devices);
 const port: number = Number(process.env.PORT) || 3000;
 const httpPort: number = 3001;
-const address: string = process.env.SERVER || 'localhost';
+const address: string = process.env.SERVER || '192.168.1.3';
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
@@ -31,10 +32,12 @@ app.prepare().then(() => {
     const parsedUrl = parse(req.url!, true)
     handle(req, res, parsedUrl)
   }).listen(port, address)
-  
-    connectDB();
-    fetchTrafficDataFromDB();
-    scheduleExecution();
+    
+    extractUsdValue()
+    /*
+    //connectDB();
+    //fetchTrafficDataFromDB();
+    //scheduleExecution();
 
     const wss = new WebSocketServer({ server: httpsServer, path: '/api/traffic-updates' });
     wss.on('connection', (ws) => {
@@ -57,7 +60,7 @@ app.prepare().then(() => {
                 client.send(JSON.stringify(updatedData));
             }
         });
-    }, 6000);
+    }, 6000);*/
     // Start HTTP server to redirect to HTTPS
     const httpServer = http.createServer((req, res) => {
         res.writeHead(301, { Location: `https://${address}:${port}${req.url}` });
@@ -73,7 +76,6 @@ app.prepare().then(() => {
     }`
   )
 })
-
 
 // WebSocket server associated with HTTPS server
 
