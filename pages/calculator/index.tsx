@@ -2,14 +2,16 @@
 
 import { useState, useEffect } from 'react';
 import DefaultLayout from "@/layouts/default";
-import { Input, Button, Card, CardBody, CardHeader } from '@nextui-org/react'
+import { Input, Button, Card, CardBody, CardHeader, Checkbox } from '@nextui-org/react'
 
 export default function IndexPage() {
   const [bcvUsdValue, setBcvUsdValue] = useState<number | null>(null);
   const [usdValue, setUsdValue] = useState('');
+  const [bsValue, setBsValue] = useState('');
   const [result1, setResult1] = useState<number | null>(null);
   const [result2, setResult2] = useState<number | null>(null);
   const [totalResult, setTotalResult] = useState<number | null>(null);
+  const [parcialPay, setParcialPay] = useState<boolean>(false);
 
   useEffect(() => {
     fetch('/api/get-usd-bcv')
@@ -21,14 +23,15 @@ export default function IndexPage() {
         console.error('Error fetching USD value:', error);
       });
   }, []);
-
+  const handleParcialPay = () => {
+    setParcialPay(true);
+  };
   const handleCalculate = () => {
     const userValue = parseFloat(usdValue);
     if (isNaN(userValue)) {
       alert('Please enter a valid number');
       return;
     }
-
     const result1 = userValue * (bcvUsdValue || 0);
     const result2 = result1 * 0.16;
     const totalResult = result1 + result2;
@@ -54,6 +57,19 @@ export default function IndexPage() {
             type="number"
             step="0.01"
           />
+          <Checkbox onChange={handleParcialPay}>¿Pago parcial en bs?</Checkbox>
+          {totalResult !== null && (
+            <section>
+                <Input
+                    label="Ingrese monto a pagar en BS expresado en USD"
+                    placeholder="0.00"
+                    value={usdValue}
+                    onChange={(e) => setBsValue(e.target.value)}
+                    type="number"
+                    step="0.01"
+                  />
+            </section>
+          )}
           <Button color="primary" onPress={handleCalculate}>
             Calculate
           </Button>
