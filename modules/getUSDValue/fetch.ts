@@ -44,14 +44,28 @@ export async function extractUsdValue() {
     await page.waitForNavigation();
 
     const usdValue = await page.evaluate(() => {
-        // Select the <p> element that contains the BS value
-        const usdElement = document.querySelector('p.font-bold.text-xl');
-        if (usdElement) {
-            // Extract the text content and remove the 'Bs = ' part
-            const textContent = usdElement.textContent!.trim();
-            const value = textContent.replace('Bs = ', '').replace(/,/g, '.'); // Replace comma with period
-            const parsedValue = parseFloat(value);            
-            return parsedValue
+        // Select all <div> elements with the class "border-2 rounded-lg shadow p-2 text-center overflow-hidden"
+        const bcvSections = document.querySelectorAll('div.border-2.rounded-lg.shadow.p-2.text-center.overflow-hidden');
+        let bcvSection = null;
+    
+        // Iterate through the selected <div> elements to find the one containing "BCV (Oficial)"
+        bcvSections.forEach(section => {
+            const heading = section.querySelector('h3');
+            if (heading && heading.textContent.trim() === 'BCV (Oficial)') {
+                bcvSection = section;
+            }
+        });
+    
+        if (bcvSection) {
+            // Select the <p> element that contains the BS value within the "BCV (Oficial)" section
+            const usdElement = bcvSection.querySelector('p.font-bold.text-xl');
+            if (usdElement) {
+                // Extract the text content and remove the 'Bs = ' part
+                const textContent = usdElement.textContent!.trim();
+                const value = textContent.replace('Bs = ', '').replace(/,/g, '.'); // Replace comma with period
+                const parsedValue = parseFloat(value);
+                return parsedValue;
+            }
         }
         return null;
     });
