@@ -42,7 +42,7 @@ export default function IndexPage() {
      <section className='flex flex-col items-center justify-center'>
       <Card className="w-full max-w-md">
         <CardHeader className="flex flex-col items-center pb-0">
-          <h1 className="text-2xl font-bold">Calculadora USD a BCV + IGTF</h1>
+          <h1 className="text-2xl font-bold">Calculadora USD a BCV + IVA</h1>
           <p className="text-sm text-default-500">Tasa del dia: {bcvUsdValue || 'N/A'} Bs</p>
         </CardHeader>
         <CardBody className="flex flex-col gap-4">
@@ -61,11 +61,11 @@ export default function IndexPage() {
             <div className="text-center">
               <p className="text-sm font-extralight">Valor Neto</p>
               <p className="text-base font-extralight">{result1?.toFixed(2)} Bs</p>
-              <p className="text-sm font-extralight">Impuesto IGTF 16%:</p>
+              <p className="text-sm font-extralight">IVA 16%:</p>
               <p className="text-base font-extralight">{result2?.toFixed(2)} Bs</p>
               <p className="text-2xl font-semibold">Total</p>
               <p className="text-2xl font-bold">{totalResult.toFixed(2)} Bs</p>
-              <p className="text-sm font-extralight my-1.5">Nota importante: Si se paga una parte en USD y otra en bolívares, el IGTF se aplica sobre el monto total en USD.</p>
+              <p className="text-sm font-extralight my-1.5">Nota importante: Si se paga una parte en USD y otra en bolívares, el IVA se aplica sobre el monto total en USD.</p>
             </div>
           )}
         </CardBody>
