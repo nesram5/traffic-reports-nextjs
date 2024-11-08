@@ -12,13 +12,13 @@ export function simplified_report(summarizedData: any, trafficReportTypes: any, 
                 const { group: groupName, mbps } = summarizedData[type][group];
                 let mbpsValue = Math.abs(Math.round(mbps)); 
 
-                typeText += `📌 *${groupName}:*  \`\`\`${mbpsValue} Mbps\`\`\`\n`;
+                typeText += `📌 *${groupName}:*  \`\`\`${formatNumberWithDot(mbpsValue)} Mbps\`\`\`\n`;
                 totalType += mbpsValue; 
             }
         }
 
         if (type === "Proveedores"){
-            typeText += `📌 *Total ${type}:*  \`\`\`${Math.round(totalType)} Mbps\`\`\`\n`;
+            typeText += `📌 *Total ${type}:*  \`\`\`${formatNumberWithDot(Math.round(totalType))} Mbps\`\`\`\n`;
         }
 
         resultText += typeText;
@@ -41,13 +41,13 @@ export function detailed_report(detailedData: any, trafficReportTypes: any, star
                 const { name: deviceName, mbps } = detailedData[type][name];
                 let mbpsValue = Math.abs(Math.round(mbps)); 
 
-                typeText += `📌 *${deviceName}:*  \`\`\`${mbpsValue} Mbps\`\`\`\n`;
+                typeText += `📌 *${deviceName}:*  \`\`\`${formatNumberWithDot(mbpsValue)} Mbps\`\`\`\n`;
                 totalType += mbpsValue; 
             }
         }
 
         if (type === "Proveedores" || type === "FTTH"){
-            typeText += `📌 *Total ${type}:*  \`\`\`${Math.round(totalType)} Mbps\`\`\`\n`;
+            typeText += `📌 *Total ${type}:*  \`\`\`${formatNumberWithDot(Math.round(totalType))} Mbps\`\`\`\n`;
         }
 
         resultText += typeText;
@@ -75,4 +75,8 @@ export function getCurrentTimeInUTCMinus4() {
     const period = timeParts[1].toLowerCase();
 
     return `${time} ${period}`; 
+}
+
+function formatNumberWithDot(num: number): string {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 }
