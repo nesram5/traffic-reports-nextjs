@@ -3,11 +3,13 @@ import { autoGetReportSnmp } from '../snmp-report/main';
 import { autoGetReportZabbix } from '../zabbix-report/main';
 import { extractUsdValue } from '../getUSDValue/fetch';
 import { saveToLog } from '../logger/log';
+import { setCurrentModtime } from '../checkChange/check';
 
 // Automatic execute functions
 async function executeTwicePerHour() {
   await autoGetReportZabbix();
   setInterval(fetchTrafficDataFromDB, 1000)
+  setCurrentModtime();
   saveToLog(`Function executed at: ${new Date().toLocaleTimeString()}`);
 }
 

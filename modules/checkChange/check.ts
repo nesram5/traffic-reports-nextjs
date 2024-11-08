@@ -17,10 +17,12 @@ function getFileModificationTime(): Date {
 
 // Function to check if a file has changed
 export function checkIfCacheHasChanged(): boolean {
+  const threshold = 60000;
   try {
     const storedModificationTime = getModtime();
     const currentModificationTime = getFileModificationTime();
-    return currentModificationTime > storedModificationTime;
+    const diff = Math.abs(currentModificationTime.getTime() - storedModificationTime.getTime());
+    return diff < threshold;
   } catch (error) {
     console.error('Error checking file:', error);
     return false;
