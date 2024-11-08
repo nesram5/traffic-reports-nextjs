@@ -7,7 +7,7 @@ export function saveToLog(line: string) {
         if (err) {
             console.error(`Error appending to file: ${err}`);
         } else {
-            console.log('Line added successfully.');
+            //console.log('Line added successfully.');
         }
     });
 }

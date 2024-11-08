@@ -68,3 +68,8 @@ export async function fetchTrafficDataFromDB() {
         console.error('Error fetching traffic data:', err);
     }
 }
+
+export function getTrafficData() {
+    const data = fs.readFileSync(path.join(process.cwd(), 'cache/trafficDataCache.json'), 'utf-8');
+    return JSON.parse(data);
+}

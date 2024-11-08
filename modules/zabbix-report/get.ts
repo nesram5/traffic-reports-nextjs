@@ -39,7 +39,7 @@ async function login() {
     });
 
     if (response && response.ok()) {
-        console.log('Page loaded successfully:', page.url());
+        //console.log('Page loaded successfully:', page.url());
     } else {
         console.log('Failed to load the page. Status code:', response ? response.status() : 'Unknown');
     }

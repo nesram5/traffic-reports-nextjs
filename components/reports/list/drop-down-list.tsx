@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { CodeBlock } from '../../copy-box/copy';
 
 
-const address: string = process.env.SERVER || '10.3.0.194';
+const address: string = process.env.REACT_APP_API_URL || 'localhost';
 // Data interfaces
 interface IItem {
     first: string;
