@@ -1,5 +1,5 @@
-import { fetchTrafficDataFromDB }  from '../handlerDB/fetch';
-import { autoGetReportSnmp } from '../snmp-report/main';  
+import { fetchTrafficDataFromDB } from '../handlerDB/fetch';
+import { autoGetReportSnmp } from '../snmp-report/main';
 import { autoGetReportZabbix } from '../zabbix-report/main';
 import { extractUsdValue } from '../getUSDValue/fetch';
 import { saveToLog } from '../logger/log';
@@ -8,7 +8,7 @@ import { setCurrentModtime } from '../checkChange/check';
 // Automatic execute functions
 async function executeTwicePerHour() {
   await autoGetReportZabbix();
-  setInterval(fetchTrafficDataFromDB, 1000)
+  setInterval(fetchTrafficDataFromDB, 1000);
   setCurrentModtime();
   saveToLog(`Function executed at: ${new Date().toLocaleTimeString()}`);
 }
@@ -18,10 +18,11 @@ async function executeEvery5Min() {
   //console.log("Function executed at:", new Date().toLocaleTimeString());
 }
 
-function executeDailyAt8AM() {  
-  extractUsdValue()
+function executeDailyAt8AM() {
+  extractUsdValue();
   console.log("Daily function executed at:", new Date().toLocaleTimeString());
 }
+
 function getTimeUntilNextExecution(hourlyMinutes: number) {
   const now = new Date();
   const minutes = now.getMinutes();
@@ -54,28 +55,52 @@ export function scheduleExecution() {
   // Schedule the first execution of the function 9 minutes before :25
   const timeUntilNextFirstExecution = getTimeUntilNextExecution(firstTargetMinutes);
   setTimeout(() => {
+    executeTwicePerHour();
+    setInterval(() => {
       executeTwicePerHour();
-      setInterval(executeTwicePerHour, 60 * 60 * 1000); // Repeat every hour
+      const nextExecutionTime = getTimeUntilNextExecution(firstTargetMinutes);
+      setTimeout(() => {
+        executeTwicePerHour();
+      }, nextExecutionTime);
+    }, 60 * 60 * 1000); // Repeat every hour
   }, timeUntilNextFirstExecution);
 
   // Schedule the second execution of the function 9 minutes before :55
   const timeUntilNextSecondExecution = getTimeUntilNextExecution(secondTargetMinutes);
   setTimeout(() => {
+    executeTwicePerHour();
+    setInterval(() => {
       executeTwicePerHour();
-      setInterval(executeTwicePerHour, 60 * 60 * 1000); // Repeat every hour
+      const nextExecutionTime = getTimeUntilNextExecution(secondTargetMinutes);
+      setTimeout(() => {
+        executeTwicePerHour();
+      }, nextExecutionTime);
+    }, 60 * 60 * 1000); // Repeat every hour
   }, timeUntilNextSecondExecution);
 
   // Schedule the 5-minute execution
   const timeUntilNext5MinExecution = getTimeUntilNextExecution(5);
   setTimeout(() => {
+    executeEvery5Min();
+    setInterval(() => {
       executeEvery5Min();
-      setInterval(executeEvery5Min, 5 * 60 * 1000); // Run every 5 minutes
+      const nextExecutionTime = getTimeUntilNextExecution(5);
+      setTimeout(() => {
+        executeEvery5Min();
+      }, nextExecutionTime);
+    }, 5 * 60 * 1000); // Run every 5 minutes
   }, timeUntilNext5MinExecution);
 
-   // Schedule the daily execution at 8:00 AM
-   const timeUntilNext8AMExecution = getTimeUntilNext8AM();
-   setTimeout(() => {
-     executeDailyAt8AM();
-     setInterval(executeDailyAt8AM, 24 * 60 * 60 * 1000); // Repeat every 24 hours
-   }, timeUntilNext8AMExecution);
+  // Schedule the daily execution at 8:00 AM
+  const timeUntilNext8AMExecution = getTimeUntilNext8AM();
+  setTimeout(() => {
+    executeDailyAt8AM();
+    setInterval(() => {
+      executeDailyAt8AM();
+      const nextExecutionTime = getTimeUntilNext8AM();
+      setTimeout(() => {
+        executeDailyAt8AM();
+      }, nextExecutionTime);
+    }, 24 * 60 * 60 * 1000); // Repeat every 24 hours
+  }, timeUntilNext8AMExecution);
 }
