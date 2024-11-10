@@ -15,6 +15,8 @@ async function executeTwicePerHour() {
 
 function executeDailyAt8AM() {
   extractUsdValue();
+function executeDailyAt8AM() {
+  extractUsdValue();
   console.log("Daily function executed at:", new Date().toLocaleTimeString());
 }
 

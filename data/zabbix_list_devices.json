@@ -139,27 +139,27 @@
     },
     "FTTH-SLA-BNG-1": {
         "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=412133&action=showvalues&plaintext=As+plain+text",
-        "name": "Shangri LA(OLT-1-2-3) BNG-1",
+        "name": "Shangri LA (OLT ZTE 1-2-3) BNG-1",
         "type": "FTTH",
-        "group": "Shangri LA(OLT-1-2-3)"
+        "group": "Shangri LA (OLT ZTE CARD 1-2-3)"
     },
     "FTTH-SLA-BNG-2": {
         "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521347&action=showvalues&plaintext=As+plain+text",
-        "name": "Shangri LA(OLT-1-2-3) BNG-2",
+        "name": "Shangri LA (OLT ZTE 1-2-3) BNG-2",
         "type": "FTTH",
-        "group": "Shangri LA(OLT-1-2-3)"
+        "group": "Shangri LA (OLT ZTE CARD 1-2-3)"
     },
     "FTTH-FM-BNG-1": {
         "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329751&action=showvalues&plaintext=As+plain+text",
-        "name": "Fundacion Mendoza (OLT-1-2-3-4) BNG-1",
+        "name": "Fundacion Mendoza (OLT ZTE CARD 1-2-3-4) BNG-1",
         "type": "FTTH",
-        "group": "Fundacion Mendoza (OLT-1-2-3-4)"
+        "group": "Fundacion Mendoza (OLT ZTE CARD 1-2-3-4)"
     },
     "FTTH-FM-BNG-2": {
         "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521346&action=showvalues&plaintext=As+plain+text",
-         "name": "Fundacion Mendoza (OLT-1-2-3-4) BNG-2",
+         "name": "Fundacion Mendoza (OLT ZTE CARD 1-2-3-4) BNG-2",
         "type": "FTTH",
-        "group": "Fundacion Mendoza (OLT-1-2-3-4)"
+        "group": "Fundacion Mendoza (OLT ZTE CARD 1-2-3-4)"
     },
     "FTTH-MRD-BNG-1": {
         "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329738&action=showvalues&plaintext=As+plain+text",
