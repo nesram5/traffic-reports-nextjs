@@ -150,3 +150,180 @@ Cannot connect to http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329746&act
 'No matching timestamp found within the threshold.' DIFF = 186000 logtime = 1731033597000 targetime = 1731033783000
 Cannot connect to http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329746&action=showvalues&plaintext=As+plain+text value is NULL at 10:43 pm
 
+Function executed at: 11:25:04 p. m.
+Error connecting to the page: 2024-11-10 15:07:05
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=481902&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:13
+Cannot connect to http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=481902&action=showvalues&plaintext=As+plain+text value is NULL at 3:06 pm
+
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=481902&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Cannot connect to http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=481902&action=showvalues&plaintext=As+plain+text value is NULL at 3:07 pm
+
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=481902&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Cannot connect to http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=481902&action=showvalues&plaintext=As+plain+text value is NULL at 3:07 pm
+
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=481902&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=481902&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Cannot connect to http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=481902&action=showvalues&plaintext=As+plain+text value is NULL at 3:07 pm
+
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=481188&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=481902&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=512976&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=481188&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=500358&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=512976&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=478200&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=500358&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=488009&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=478200&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=524842&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=488009&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=512977&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=524842&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=500359&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=512977&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=487747&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=500359&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=487725&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=487747&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=487726&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=487725&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=467099&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=487726&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=561359&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=467099&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=513640&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=561359&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=519617&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=513640&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329748&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=519617&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521343&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329748&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329749&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521343&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521344&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329749&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=48017&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521344&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=48018&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=48017&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=48019&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=48018&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=412133&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=48019&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521347&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=412133&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329751&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521347&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521346&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329751&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329738&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521346&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521333&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329738&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=412148&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521333&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521362&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=412148&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329746&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521362&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521341&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329746&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329752&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521341&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521364&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329752&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=412149&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521364&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521363&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=412149&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=423112&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521363&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=423433&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=423112&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=423434&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=423433&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=423435&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=423434&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=423438&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=423435&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=423582&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=423438&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=423583&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=423582&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438543&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=423583&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=200852&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438543&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=200853&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=200852&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=200854&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=200853&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=200857&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=200854&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=200856&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=200857&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=563470&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=200856&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=200855&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=563470&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=430657&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=200855&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=430658&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=430657&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=430659&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=430658&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=458022&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=430659&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=458023&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=458022&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=527168&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=458023&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=527169&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=527168&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=553797&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=527169&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=473895&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=553797&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521369&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=473895&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329754&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521369&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521366&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329754&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=488211&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521366&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521370&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=488211&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-10 15:07:14
+'No matching timestamp found within the threshold.' DIFF = 183000 logtime = 1731266517000 targetime = 1731266700000
+Cannot connect to http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329754&action=showvalues&plaintext=As+plain+text value is NULL at 3:25 pm
+
+Function executed at: 3:25:08 p. m.
+'No matching timestamp found within the threshold.' DIFF = 183000 logtime = 1731268317000 targetime = 1731268500000
+Cannot connect to http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=412133&action=showvalues&plaintext=As+plain+text value is NULL at 3:55 pm
+
+'No matching timestamp found within the threshold.' DIFF = 185000 logtime = 1731268317000 targetime = 1731268502000
+Cannot connect to http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=412133&action=showvalues&plaintext=As+plain+text value is NULL at 3:55 pm
+
+'No matching timestamp found within the threshold.' DIFF = 186000 logtime = 1731268317000 targetime = 1731268503000
+'No matching timestamp found within the threshold.' DIFF = 186000 logtime = 1731268317000 targetime = 1731268503000
+'No matching timestamp found within the threshold.' DIFF = 186000 logtime = 1731268317000 targetime = 1731268503000
+'No matching timestamp found within the threshold.' DIFF = 183000 logtime = 1731268320000 targetime = 1731268503000
+'No matching timestamp found within the threshold.' DIFF = 183000 logtime = 1731268320000 targetime = 1731268503000
+Function executed at: 3:55:07 p. m.
+'No matching timestamp found within the threshold.' DIFF = 224000 logtime = 1731268320000 targetime = 1731268544000
+Cannot connect to http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=488211&action=showvalues&plaintext=As+plain+text value is NULL at 3:55 pm
+
+'No matching timestamp found within the threshold.' DIFF = 234000 logtime = 1731268320000 targetime = 1731268554000
+Cannot connect to http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=488211&action=showvalues&plaintext=As+plain+text value is NULL at 3:55 pm
+
+'No matching timestamp found within the threshold.' DIFF = 238000 logtime = 1731268320000 targetime = 1731268558000
+Function executed at: 3:56:02 p. m.
+'No matching timestamp found within the threshold.' DIFF = 203000 logtime = 1731270117000 targetime = 1731270320000
+Cannot connect to http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329754&action=showvalues&plaintext=As+plain+text value is NULL at 4:25 pm
+
+Cannot connect to http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329754&action=showvalues&plaintext=As+plain+text value is NULL at 4:25 pm
+
+'No matching timestamp found within the threshold.' DIFF = 212000 logtime = 1731270117000 targetime = 1731270329000
+'No matching timestamp found within the threshold.' DIFF = 217000 logtime = 1731270117000 targetime = 1731270334000
+Function executed at: 4:25:38 p. m.

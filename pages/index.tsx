@@ -1,9 +1,7 @@
-"use client"
-
 import { useState } from 'react';
 import DefaultLayout from "@/layouts/default";
-import { GetReport } from "@/components/reports/get/get-report";
-import { TrafficReportDropDown } from '@/components/reports/list/drop-down-list'
+import { GetReport } from "@/components/get-report";
+import { DropDownList } from '@/components/drop-down-list/main';
 import { Button } from "@nextui-org/react"
 
 export default function Component() {
@@ -20,7 +18,7 @@ export default function Component() {
                   </div>
                 )}
             <section className="w-full flex-col-reverse">
-          <TrafficReportDropDown />
+          <DropDownList />
           </section>
         </main>
 

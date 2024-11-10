@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CodeBlock } from '../../copy-box/copy';
+import { CodeBlock } from '@/components/copy';
 
 export const GetReport: React.FC = () => {
     const [progress, setProgress] = useState<number>(0);
