@@ -140,7 +140,7 @@ export function getCurrentTimestamp() {
 
 function pathToBrowser(): any {
     let winBrowser = path.join('C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe');
-    let linuxBrowser = path.join('/usr/bin/chromium-browser');
+    let linuxBrowser = path.join('/usr/bin/chromium');
     let pathToBrowser: any;
     if(isOS('windows')){
         pathToBrowser = winBrowser;
