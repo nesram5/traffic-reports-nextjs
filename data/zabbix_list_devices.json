@@ -136,7 +136,7 @@
         "name": "Paseo - Guajiros, Santa Rosa (OLT 3)",
         "type": "FTTH",
         "group": "Paseo - Guajiros, Santa Rosa (OLT 3)"
-    },
+    },    
     "FTTH-SLA-BNG-1": {
         "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=412133&action=showvalues&plaintext=As+plain+text",
         "name": "Shangri LA (OLT ZTE 1-2-3) BNG-1",
