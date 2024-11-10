@@ -1,7 +1,6 @@
 import '@/envConfig';
 import {createServer} from 'https';
 import http from 'http';
-import { WebSocketServer } from 'ws';
 import fs from 'fs';
 import path from 'path';
 import { parse } from 'url';
@@ -15,7 +14,7 @@ const httpPort: number = 80;
 const address: string = process.env.SERVER || '192.168.1.3';
 
 const dev = process.env.NODE_ENV !== 'production'
-const app = next({ })
+const app = next({})
 const handle = app.getRequestHandler()
 const options = {
     key: fs.readFileSync(path.join(__dirname, 'key.pem')),

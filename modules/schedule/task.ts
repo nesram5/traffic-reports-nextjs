@@ -1,5 +1,5 @@
 import { fetchTrafficDataFromDB } from '@/modules/handlerDB/fetch';
-//import { autoGetReportSnmp } from '@/modules/snmp-report/main';
+import { autoGetReportSnmp } from '@/modules/snmp-report/main';
 import { autoGetReportZabbix } from '@/modules/zabbix-report/main';
 import { extractUsdValue } from '@/modules/getUSDValue/fetch';
 import { saveToLog } from '@/modules/logger/log';
@@ -13,8 +13,7 @@ async function executeTwicePerHour() {
   saveToLog(`Function executed at: ${new Date().toLocaleTimeString()}`);
 }
 
-function executeDailyAt8AM() {
-  extractUsdValue();
+
 function executeDailyAt8AM() {
   extractUsdValue();
   console.log("Daily function executed at:", new Date().toLocaleTimeString());
