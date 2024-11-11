@@ -1,5 +1,5 @@
-import WaveAnimatedBackgroundLayout  from './background';
-import { Head } from "./head";
+import WaveAnimatedBackgroundLayout  from '@/layouts/background';
+import { Head } from "@/layouts/head";
 
 import { Navbar } from "@/components/navbar";
 

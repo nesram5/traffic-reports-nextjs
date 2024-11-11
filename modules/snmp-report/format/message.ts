@@ -1,4 +1,4 @@
-import { iTrafficReport } from '../interfaces/traffic-data';
+import { iTrafficReport } from '@/modules/snmp-report/interfaces/traffic-data';
 
 export function detailed_report(detailedReport: iTrafficReport, startTime: string, trafficReportTypes: string[]): string {
     let resultText = `\n\n\n\n------ _Reporte detallado_ -------\n`;

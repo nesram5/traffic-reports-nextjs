@@ -1,4 +1,4 @@
-import { ITrafficData, iTrafficReport } from '../interfaces/traffic-data';
+import { ITrafficData, iTrafficReport } from '@/modules/snmp-report/interfaces/traffic-data';
 
 export function calculateTraffic(
     data: ITrafficData,

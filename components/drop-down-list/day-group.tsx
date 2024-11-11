@@ -1,6 +1,6 @@
 "use client";
 import { useState } from 'react';
-import { GroupItem } from './group-item';
+import { GroupItem } from '@/components/drop-down-list/group-item';
 import { type IGroupItem } from '@/lib/types';
 
 interface DayGroupProps {

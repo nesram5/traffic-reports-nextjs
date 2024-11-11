@@ -1,4 +1,4 @@
-import { CompTrafficData } from './schema';
+import { CompTrafficData } from '@/modules/handlerDB/schema';
 
 async function pushCompiledReport(newTrafficRecord: {}) {
     try {

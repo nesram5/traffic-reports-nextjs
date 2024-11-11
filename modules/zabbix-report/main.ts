@@ -1,11 +1,13 @@
 import fs from 'fs';
 import path from 'path';
-import { saveToLog } from '../logger/log';
-import { submitToDB } from '../handlerDB/submit';
-import {gatherMainData, getDownloadValue, getCurrentTimestamp,closeBrowser, restoreToinit } from './get';
-import { summarizeMbpsAndExtractTypes } from './process';
-import { simplified_report, getCurrentTimeInUTCMinus4, detailed_report} from './message';
+import { saveToLog } from '@/modules/logger/log';
+import { submitToDB } from '@/modules/handlerDB/submit';
+import {gatherMainData, getDownloadValue, getCurrentTimestamp,closeBrowser, restoreToinit } from '@/modules/zabbix-report/get';
+import { summarizeMbpsAndExtractTypes } from '@/modules/zabbix-report/process';
+import { simplified_report, getCurrentTimeInUTCMinus4, detailed_report} from '@/modules/zabbix-report/message';
 
+const file = path.join(process.cwd(), 'data/zabbix_list_devices.json');
+const providers = readJsonFile(file);
 
 function readJsonFile(filePath: any) {
     const data: any = fs.readFileSync(filePath);
@@ -14,9 +16,9 @@ function readJsonFile(filePath: any) {
 
 
 export async function getReportZabbix(attempt = 0): Promise<{simpleResult: string, detailedResult: string}>{
-    const file = path.join(process.cwd(), 'data/zabbix_list_devices.json');
     
-    const providers = readJsonFile(file);
+    const MAX_ATTEMPTS = 3;
+    
     const currentTimestamp = getCurrentTimestamp();
     const startTime = getCurrentTimeInUTCMinus4()
     const results: any = {}; 
@@ -27,9 +29,11 @@ export async function getReportZabbix(attempt = 0): Promise<{simpleResult: strin
         const mainData = await gatherMainData(provider.link);         
         const targetTime = new Date(currentTimestamp).getTime();
         const mbpsValue = getDownloadValue(mainData, targetTime); 
-        if (mbpsValue === null && attempt < 2){
+        if (mbpsValue === null && attempt < MAX_ATTEMPTS) {
             saveToLog(`Cannot connect to ${provider.link} value is NULL at ${startTime}\n` )
-            return getReportZabbix(attempt + 1)
+            await new Promise(resolve => setTimeout(resolve, 15000));
+            closeBrowser();
+            return getReportZabbix(attempt + 1);
         }
 
         results[key] = {

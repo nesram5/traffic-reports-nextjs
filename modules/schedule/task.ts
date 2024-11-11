@@ -9,10 +9,9 @@ import schedule from 'node-schedule';
 // Automatic execute functions
 async function executeTwicePerHour() {
   await autoGetReportZabbix();
-  fetchTrafficDataFromDB();
+  await fetchTrafficDataFromDB();
   saveToLog(`Function executed at: ${new Date().toLocaleTimeString()}`);
 }
-
 
 function executeDailyAt8AM() {
   extractUsdValue();
@@ -22,6 +21,7 @@ function executeDailyAt8AM() {
 export function scheduleExecution() {
   // Schedule the function to run twice per hour at 25 and 55 minutes past the hour
   cron.schedule('25,55 * * * *', executeTwicePerHour);
+
 
   // Schedule the function to run daily at 8:00 AM
   schedule.scheduleJob('0 8 * * *', executeDailyAt8AM);

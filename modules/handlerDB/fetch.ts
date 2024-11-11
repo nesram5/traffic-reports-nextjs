@@ -1,5 +1,5 @@
-import { IMonthGroup } from './date-group';
-import { CompTrafficData } from './schema';
+import { IMonthGroup } from '@/modules/handlerDB/date-group';
+import { CompTrafficData } from '@/modules/handlerDB/schema';
 import fs from 'fs';
 import path from 'path';
 const cacheFile = path.join(process.cwd(), 'cache/trafficDataCache.json');

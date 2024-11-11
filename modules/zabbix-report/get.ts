@@ -2,7 +2,7 @@ import '@/envConfig';
 import puppeteer  from 'puppeteer-core';
 import path from 'path';
 import * as os from 'os';
-import { saveToLog } from '../logger/log';
+import { saveToLog } from '@/modules/logger/log';
 
 let browser: any;
 let page: any;
@@ -24,11 +24,18 @@ async function login() {
     browser = await puppeteer.launch({
         executablePath: browserPath, 
         args: [
+            '--disable-gpu',
+            '--disable-dev-shm-usage',
             '--disable-setuid-sandbox',
             '--no-first-run',
             '--no-sandbox',
-        ],
-        headless: true 
+            '--no-zygote',
+            '--ignore-certificate-errors',
+            '--ignore-certificate-errors-spki-list',
+            '--single-process'
+          ],
+          headless: true,
+          acceptInsecureCerts: true 
     });
 
     page = await browser.newPage();
@@ -55,7 +62,7 @@ async function login() {
 
     await page.waitForNavigation();
 }
-export async function gatherMainData(pageLink: any) {
+export async function gatherMainData(pageLink: any): Promise<any> {
     if (!browser) {
         await login(); 
     }
@@ -63,10 +70,10 @@ export async function gatherMainData(pageLink: any) {
     try {
         await page.goto(pageLink); 
     } catch (error) {
-        console.log(`Error opening link ${pageLink}: check the JSON file`);
         saveToLog(`Error opening link ${pageLink}: check the JSON file ${getCurrentTimestamp()}`);
-        console.error(`Error opening link ${pageLink}: check the JSON file`, error);
-        return 'Navigation error'; 
+        restoreToinit();
+        await new Promise(resolve => setTimeout(resolve, 15000));
+        return gatherMainData(pageLink)
     }
 
     let mainData = await page.evaluate(() => {
@@ -121,7 +128,6 @@ export function getDownloadValue(logs: any, targetTime: any) {
         return byteValue / 1e6; // Return the closest value in MB
     } else {
         saveToLog(`'No matching timestamp found within the threshold.' DIFF = ${diff} logtime = ${logTime} targetime = ${targetTime}`);
-        console.log('No matching timestamp found within the threshold.');
         return null;
     }
 }

@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from 'react';
-import { DayGroup } from './day-group';
+import { DayGroup } from '@/components/drop-down-list/day-group';
 import { type IDayGroup } from '@/lib/types';
 import { checkIfCurrentMonth } from '@/lib/utils';
 

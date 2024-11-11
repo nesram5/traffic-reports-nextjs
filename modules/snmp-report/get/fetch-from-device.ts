@@ -1,6 +1,6 @@
-import { ITrafficData, ISplitReport, iTrafficReport } from '../interfaces/traffic-data';
-import { getAll } from './traffic-data';
-import { calculateTraffic } from '../calculate/traffic';
+import { ITrafficData, ISplitReport, iTrafficReport } from '@/modules/snmp-report/interfaces/traffic-data';
+import { getAll } from '@/modules/snmp-report/get/traffic-data';
+import { calculateTraffic } from '@/modules/snmp-report/calculate/traffic';
 
 export async function fechReport(
     expectedTime: number,
