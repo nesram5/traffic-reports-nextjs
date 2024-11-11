@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { IMonthGroup } from '@/lib/types';
-import { MonthGroup } from '@/components/drop-down-list/month-group';
-
-const address: string = process.env.NEXT_PUBLIC_API_URL || 'localhost';
+import { MonthGroup } from './month-group';
 
 export const DropDownList: React.FC = () => {
   const [monthData, setMonthData] = useState<IMonthGroup[]>([]);
@@ -10,48 +8,34 @@ export const DropDownList: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Fetch initial data from /api/traffic
-    async function fetchInitialData() {
+    const fetchLiveData = async () => {
+      setLoading(true);
+      setError(null);
+
       try {
         const response = await fetch('/api/traffic');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
-        const data: IMonthGroup[] = await response.json();
-        setMonthData(data);
-        setLoading(false);
+        const updatedData: IMonthGroup[] = await response.json();
+        setMonthData(updatedData);
       } catch (error) {
-        console.error('Error fetching initial traffic data:', error);
-        setError('Failed to fetch initial data. Please try again later.');
+        console.error('Error fetching updated traffic data:', error);
+        setError('Failed to fetch updated data. Please try again later.');
+      } finally {
         setLoading(false);
       }
-    }
-
-    fetchInitialData();
-
-    // Establish a WebSocket connection for real-time updates
-    const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
-    const socket = new WebSocket(`${protocol}://${address}/api/traffic-updates`);
-
-    socket.onmessage = (event) => {
-      const updatedData: IMonthGroup[] = JSON.parse(event.data);
-      setMonthData(updatedData);
     };
 
-    socket.onclose = () => {
-      console.log('WebSocket connection closed');
-    };
+    // Poll the server every 60 seconds (60000 ms)
+    const intervalId = setInterval(fetchLiveData, 60000);
 
-    socket.onerror = (error) => {
-      console.error('WebSocket error:', error);
-      setError('WebSocket connection error. Please try again later.');
-    };
+    // Fetch data initially when the component mounts
+    fetchLiveData();
 
-    // Cleanup WebSocket connection on component unmount
-    return () => {
-      socket.close();
-    };
-  }, []);
+    // Cleanup the interval on component unmount
+    return () => clearInterval(intervalId);
+  }, []); // Removed monthData from the dependency array
 
   return (
     <div className='flex flex-col-reverse'>

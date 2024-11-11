@@ -89,7 +89,7 @@ export async function closeBrowser() {
         await browser.close();
     }
 }
-
+/*
 export function getDownloadValue(logs: any, targetTime: any) {
     const MATCH_THRESHOLD_MS = 181000;
 
@@ -131,7 +131,40 @@ export function getDownloadValue(logs: any, targetTime: any) {
         return null;
     }
 }
+*/
+export function getDownloadValue(logs: string, targetTime: any): number | null {
+    if (typeof logs !== 'string') {
+        console.error('The logs parameter should be a string.');
+        return null; // Return null if logs is not a string
+    }
 
+    const lines = logs.split('\n').filter(line => line.trim() !== '');
+    let closestValue: number | null = null;
+    let closestDiff = Infinity;
+    const threshold = 240000; // 4 minutes in milliseconds
+
+    lines.forEach(line => {
+        const parts = line.split(' ');
+        if (parts.length < 4) return; // Skip lines that don't have enough data
+
+        const logTime = new Date(parts[0] + ' ' + parts[1]).getTime();
+        const byteValue = parseInt(parts[3], 10); // The download value in bytes
+
+        const diff = Math.abs(logTime - targetTime);
+
+        if (diff < closestDiff && diff <= threshold) {
+            closestDiff = diff;
+            closestValue = byteValue;
+        }
+    });
+
+    if (closestValue !== null) {
+        return closestValue / 1e6; // Convert bytes to MBps and return
+    } else {
+        saveToLog(`'No matching timestamp found within the threshold.'`);
+        return null;
+    }
+}
 export function getCurrentTimestamp() {
     const now = new Date();
     const year = now.getFullYear();
