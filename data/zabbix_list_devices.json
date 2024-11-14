@@ -89,35 +89,17 @@
         "type": "Transportes",
         "group": "Mirador - Netcom Plus (20 Gbps)"
     },
-    "BNG-01": {
-        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=553465&action=showvalues&plaintext=As+plain+text",
-        "name": "BNG 1",
-        "type": "BNG",
-        "group": "BNG 1"
-    },
     "BNG-02": {
         "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=584801&action=showvalues&plaintext=As+plain+text",
         "name": "BNG 2",
         "type": "BNG",
         "group": "BNG 2"
     },
-    "FTTH-LP-NET-BNG01": {
-        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329748&action=showvalues&plaintext=As+plain+text",
-        "name": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3-4) BNG-01",
-        "type": "FTTH",
-        "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3-4)"
-    },
     "FTTH-LP-NET-BNG02": {
         "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521343&action=showvalues&plaintext=As+plain+text",
         "name": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3-4) BNG-02",
         "type": "FTTH",
         "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3-4)"
-    },
-    "FTTH-LP-NYC-BNG01": {
-        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329749&action=showvalues&plaintext=As+plain+text",
-        "name": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 13) BNG-01",
-        "type": "FTTH",
-        "group": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 12-13)"
     },
     "FTTH-LP-NYC-BNG02": {
         "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521344&action=showvalues&plaintext=As+plain+text",
@@ -142,12 +124,6 @@
         "name": "Paseo - Guajiros, Santa Rosa (OLT 3)",
         "type": "FTTH",
         "group": "Paseo - Guajiros, Santa Rosa (OLT 3)"
-    },    
-    "FTTH-SLA-BNG-1": {
-        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=412133&action=showvalues&plaintext=As+plain+text",
-        "name": "Shangri LA (OLT ZTE 1-2-3) BNG-1",
-        "type": "FTTH",
-        "group": "Shangri LA (OLT ZTE CARD 1-2-3)"
     },
     "FTTH-SLA-BNG-2": {
         "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521347&action=showvalues&plaintext=As+plain+text",
@@ -155,23 +131,11 @@
         "type": "FTTH",
         "group": "Shangri LA (OLT ZTE CARD 1-2-3)"
     },
-    "FTTH-FM-BNG-1": {
-        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329751&action=showvalues&plaintext=As+plain+text",
-        "name": "Fundacion Mendoza (OLT ZTE CARD 1-2-3-4) BNG-1",
-        "type": "FTTH",
-        "group": "Fundacion Mendoza (OLT ZTE CARD 1-2-3-4)"
-    },
     "FTTH-FM-BNG-2": {
         "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521346&action=showvalues&plaintext=As+plain+text",
          "name": "Fundacion Mendoza (OLT ZTE CARD 1-2-3-4) BNG-2",
         "type": "FTTH",
         "group": "Fundacion Mendoza (OLT ZTE CARD 1-2-3-4)"
-    },
-    "FTTH-MRD-BNG-1": {
-        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329738&action=showvalues&plaintext=As+plain+text",
-        "name": "Mirador(OLT-1-2) BNG-1",
-        "type": "FTTH",
-        "group": "Mirador(OLT-1-2)"
     },
     "FTTH-MRD-BNG-2": {
         "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521333&action=showvalues&plaintext=As+plain+text",
@@ -179,23 +143,11 @@
         "type": "FTTH",
         "group": "Mirador(OLT-1-2)"
     },
-    "FTTH-MGS-BNG-1": {
-        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=412148&action=showvalues&plaintext=As+plain+text",
-        "name": "Mango Shopping(OLT-1-2) BNG-1",
-        "type": "FTTH",
-        "group": "Mango Shopping(OLT-1-2)"
-    },
     "FTTH-MGS-BNG-2": {
         "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521362&action=showvalues&plaintext=As+plain+text",
         "name": "Mango Shopping(OLT-1-2) BNG-2",
         "type": "FTTH",
         "group": "Mango Shopping(OLT-1-2)"
-    },
-    "FTTH-GUA-BNG-01": {
-        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329746&action=showvalues&plaintext=As+plain+text",
-        "name": "Guacara (OLT-1-2-3-4-5) BNG-01",
-        "type": "FTTH",
-        "group": "Guacara (OLT-1-2-3-4-5-6)"
     },
     "FTTH-GUA-BNG-02": {
         "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521341&action=showvalues&plaintext=As+plain+text",
@@ -203,23 +155,11 @@
         "type": "FTTH",
         "group": "Guacara (OLT-1-2-3-4-5-6)"
     },
-    "FTTH-GYS-NET-BNG-01": {
-        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329752&action=showvalues&plaintext=As+plain+text",
-        "name": "Los Guayos (OLT-1-2): BNG-01",
-        "type": "FTTH",
-        "group": "Los Guayos (OLT-1-2)"
-    },
     "FTTH-GYS-NET-BNG-02": {
         "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521364&action=showvalues&plaintext=As+plain+text",
         "name": "Los Guayos (OLT-1-2) BNG-02",
         "type": "FTTH",
         "group": "Los Guayos (OLT-1-2)"
-    },
-    "FTTH-GYS-NYC-BNG-01": {
-        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=412149&action=showvalues&plaintext=As+plain+text",
-        "name": "Paraparal (OLT-3-4-5-6-7-8-9) BNG-01",
-        "type": "FTTH",
-        "group": "Paraparal (OLT-3-4-5-6-7-8-9)"
     },
     "FTTH-GYS-NYC-BNG-02": {
         "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521363&action=showvalues&plaintext=As+plain+text",
@@ -365,35 +305,17 @@
         "type": "FTTH",
         "group": "Cagua(OLT-1-2-3-4-5-6-7-8)"
     },
-    "FTTH-SJQ-BNG-1": {
-        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=473895&action=showvalues&plaintext=As+plain+text",
-        "name": "San Joaquín(OLT-1-2-3) BNG-1",
-        "type": "FTTH",
-        "group": "San Joaquín(OLT-1-2-3)"
-    },
     "FTTH-SJQ-BNG-2": {
         "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521369&action=showvalues&plaintext=As+plain+text",  
         "name": "San Joaquín(OLT-1-2-3) BNG-2",
         "type": "FTTH",
         "group": "San Joaquín(OLT-1-2-3)"
     },
-    "FTTH-TM-BNG-1": {
-        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=329754&action=showvalues&plaintext=As+plain+text",
-        "name": "Torre Movilnet (OLT-1-2) BNG-1",
-        "type": "FTTH",
-        "group": "Torre Movilnet (OLT-1-2)"
-    },
     "FTTH-TM-BNG-2": {
         "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521366&action=showvalues&plaintext=As+plain+text",
         "name": "Torre Movilnet (OLT-1-2) BNG-2",
         "type": "FTTH",
         "group": "Torre Movilnet (OLT-1-2)"
-    },
-    "FTTH-TCY-BNG-1": {
-        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=488211&action=showvalues&plaintext=As+plain+text",
-         "name": "Tocuyito (OLT-1) BNG-1",
-        "type": "FTTH",
-        "group": "Tocuyito (OLT-1)"
     },
     "FTTH-TCY-BNG-2": {
         "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521370&action=showvalues&plaintext=As+plain+text", 

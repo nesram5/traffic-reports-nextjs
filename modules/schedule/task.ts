@@ -18,15 +18,14 @@ function executeDailyAt8AM() {
   console.log("Daily function executed at:", new Date().toLocaleTimeString());
 }
 
-/*
 async function executeEvery5Min() {
-  await autoGetReportZabbix();
   await fetchTrafficDataFromDB();
   saveToLog(`Function executed at: ${new Date().toLocaleTimeString()}`);
 }
-*/
+
   // Schedule the function to run every 5 minutes
-//cron.schedule('*/5 * * * *', executeEvery5Min);
+  cron.schedule('26,56 * * * *', executeEvery5Min);
+  cron.schedule('28,58 * * * *', executeEvery5Min);
 
 export function scheduleExecution() {
   // Schedule the function to run twice per hour at 25 and 55 minutes past the hour
