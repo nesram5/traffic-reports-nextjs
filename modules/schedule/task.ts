@@ -32,5 +32,5 @@ export function scheduleExecution() {
   cron.schedule('25,55 * * * *', executeTwicePerHour);
 
   // Schedule the function to run daily at 8:00 AM
-  schedule.scheduleJob('0 8 * * *', executeDailyAt8AM);
+  schedule.scheduleJob('0 8 * * 1-5', executeDailyAt8AM);
 }
