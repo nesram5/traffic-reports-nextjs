@@ -6,8 +6,8 @@ import {gatherMainData, getDownloadValue, getCurrentTimestamp,closeBrowser, rest
 import { summarizeMbpsAndExtractTypes } from '@/modules/zabbix-report/process';
 import { simplified_report, getCurrentTimeInUTCMinus4, detailed_report} from '@/modules/zabbix-report/message';
 
-const file = path.join(process.cwd(), 'data/zabbix_list_devices.json');
-const providers = readJsonFile(file);
+
+
 
 function readJsonFile(filePath: any) {
     const data: any = fs.readFileSync(filePath);
@@ -15,8 +15,15 @@ function readJsonFile(filePath: any) {
 }
 
 
-export async function getReportZabbix(attempt = 0): Promise<{simpleResult: string, detailedResult: string}>{
+export async function getReportZabbix(attempt = 0 , test = false): Promise<{simpleResult: string, detailedResult: string}>{
     
+    let file = path.join(process.cwd(), 'data/zabbix_list_devices.json');
+    if (test) {
+        file = path.join(process.cwd(), 'data/test-zabbix_list_devices.json');
+    }
+    
+    const providers = readJsonFile(file);
+
     const MAX_ATTEMPTS = 3;
     
     const currentTimestamp = getCurrentTimestamp();

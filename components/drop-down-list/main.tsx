@@ -17,7 +17,10 @@ export const DropDownList: React.FC = () => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
-        const updatedData: IMonthGroup[] = await response.json();
+        const updatedData: IMonthGroup[] | null = await response.json();
+        if (!updatedData) {
+          throw new Error('No data was returned from the API');
+        }
         setMonthData(updatedData);
       } catch (error) {
         console.error('Error fetching updated traffic data:', error);
@@ -35,7 +38,7 @@ export const DropDownList: React.FC = () => {
 
     // Cleanup the interval on component unmount
     return () => clearInterval(intervalId);
-  }, []); // Removed monthData from the dependency array
+  }, [setLoading, setError, setMonthData]); // Added setLoading, setError, and setMonthData to the dependency array
 
   return (
     <div className='flex flex-col-reverse'>

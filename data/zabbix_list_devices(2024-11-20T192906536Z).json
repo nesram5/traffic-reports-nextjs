@@ -1,0 +1,326 @@
+{
+    "Prov-Fibex": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=481902&action=showvalues&plaintext=As+plain+text",
+        "name": "Fibex (40 Gbps)",
+        "type": "Proveedores",
+        "group": "Fibex (40 Gbps)"
+    },
+    "Prov-Globenet": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=481188&action=showvalues&plaintext=As+plain+text",
+        "name": "Cogent (50 Gbps)",
+        "type": "Proveedores",
+        "group": "Cogent (50 Gbps)"
+    },
+    "TD-Fibex-Val": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=584032&action=showvalues&plaintext=As+plain+text",
+        "name": "Fibex-Valencia (50 Gbps)",
+        "type": "Transportes",
+        "group": "Fibex-Valencia (50 Gbps)"
+    },
+    "TD-Fibex-Maracay": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=500358&action=showvalues&plaintext=As+plain+text",
+        "name": "Fibex-Caribe (4 Gbps)",
+        "type": "Transportes",
+        "group": "Fibex-Caribe (4 Gbps)"
+    },
+    "TD-Fibex-PC-IL": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=478200&action=showvalues&plaintext=As+plain+text",
+        "name": "Fibex-IL Pto. Cabello (6 Gbps)",
+        "type": "Transportes",
+        "group": "Fibex-Pto. Cabello (6 Gbps)"
+    },
+    "TD-Fibex-PC-IL-BAK": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=488009&action=showvalues&plaintext=As+plain+text",
+         "name": "Fibex-IL Backup Pto. Cabello (6 Gbps)",
+        "type": "Transportes",
+        "group": "Fibex-Pto. Cabello (6 Gbps)"
+    },
+    "TD-Fibex-PC-TE": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=524842&action=showvalues&plaintext=As+plain+text",
+        "name": "Fibex-TE Pto. Cabello (6 Gbps)",
+        "type": "Transportes",
+        "group": "Fibex-Pto. Cabello (6 Gbps)"
+    },
+    "TD-NetUno-Val": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=518556&action=showvalues&plaintext=As+plain+text",
+        "name": "Dayco - NetUno (18 Gbps)",
+        "type": "Transportes",
+        "group": "Dayco - NetUno (18 Gbps)"
+    },
+    "TD-NetUno-Mcy": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=500359&action=showvalues&plaintext=As+plain+text",
+        "name": "Caribe - NetUno (8 Gbps)",
+        "type": "Transportes",
+        "group": "Caribe - NetUno (8 Gbps)"
+    },
+    "TD-Digitel-PC-TE": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=487747&action=showvalues&plaintext=As+plain+text",
+        "name": "Pto. Cabello - Digitel (4 Gbps)",
+        "type": "Transportes",
+        "group": "Pto. Cabello - Digitel (4 Gbps)"
+    },
+    "TD-Digitel-CEC": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=487725&action=showvalues&plaintext=As+plain+text",
+        "name": "Caribe - Digitel (1 Gbps)",
+        "type": "Transportes",
+        "group": "Caribe - Digitel (1 Gbps)"
+    },
+    "TD-Digitel-Val": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=487726&action=showvalues&plaintext=As+plain+text",
+        "name": "Valencia - Digitel (1 Gbps)",
+        "type": "Transportes",
+        "group": "Valencia - Digitel (1 Gbps)"
+    },
+    "TD-Dayco-GUA": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=584799&action=showvalues&plaintext=As+plain+text",
+        "name": "Guacara - Netcom Plus ( 20 Gbps)",
+        "type": "Transportes",
+        "group": "Guacara - Netcom Plus ( 20 Gbps)"
+    },
+    "TD-Dayco-MRD": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=584798&action=showvalues&plaintext=As+plain+text",
+        "name": "Mirador - Netcom Plus (20 Gbps)",
+        "type": "Transportes",
+        "group": "Mirador - Netcom Plus (20 Gbps)"
+    },
+    "TD-Dayco-MRD-BAK": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=486488&action=showvalues&plaintext=As+plain+text",
+        "name": "Mirador - Netcom Plus (20 Gbps) Ruta Backup",
+        "type": "Transportes",
+        "group": "Mirador - Netcom Plus (20 Gbps)"
+    },
+    "BNG-02": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=584801&action=showvalues&plaintext=As+plain+text",
+        "name": "BNG 2",
+        "type": "BNG",
+        "group": "BNG 2"
+    },
+    "FTTH-LP-NET-BNG02": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521343&action=showvalues&plaintext=As+plain+text",
+        "name": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3-4) BNG-02",
+        "type": "FTTH",
+        "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3-4)"
+    },
+    "FTTH-LP-NYC-BNG02": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521344&action=showvalues&plaintext=As+plain+text",
+        "name": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 13) BNG-02",
+        "type": "FTTH",
+        "group": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 12-13)"
+    },
+    "FTTH-PLI-01": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=48017&action=showvalues&plaintext=As+plain+text",
+        "name": "Paseo - Parque Valencia (OLT 1)",
+        "type": "FTTH",
+        "group": "Paseo - Parque Valencia (OLT 1)"
+    },
+    "FTTH-PLI-02": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=48018&action=showvalues&plaintext=As+plain+text",
+        "name": "Paseo - Isabelica, La Quizanda (OLT 2)",
+        "type": "FTTH",
+        "group": "Paseo - Isabelica, La Quizanda (OLT 2)"
+    },
+    "FTTH-PLI-03": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=48019&action=showvalues&plaintext=As+plain+text",
+        "name": "Paseo - Guajiros, Santa Rosa (OLT 3)",
+        "type": "FTTH",
+        "group": "Paseo - Guajiros, Santa Rosa (OLT 3)"
+    },
+    "FTTH-SLA-BNG-2": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521347&action=showvalues&plaintext=As+plain+text",
+        "name": "Shangri LA (OLT ZTE 1-2-3) BNG-2",
+        "type": "FTTH",
+        "group": "Shangri LA (OLT ZTE CARD 1-2-3)"
+    },
+    "FTTH-FM-BNG-2": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521346&action=showvalues&plaintext=As+plain+text",
+         "name": "Fundacion Mendoza (OLT ZTE CARD 1-2-3-4) BNG-2",
+        "type": "FTTH",
+        "group": "Fundacion Mendoza (OLT ZTE CARD 1-2-3-4)"
+    },
+    "FTTH-MRD-BNG-2": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521333&action=showvalues&plaintext=As+plain+text",
+        "name": "Mirador(OLT-1-2) BNG-2",
+        "type": "FTTH",
+        "group": "Mirador(OLT-1-2)"
+    },
+    "FTTH-MGS-BNG-2": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521362&action=showvalues&plaintext=As+plain+text",
+        "name": "Mango Shopping(OLT-1-2) BNG-2",
+        "type": "FTTH",
+        "group": "Mango Shopping(OLT-1-2)"
+    },
+    "FTTH-GUA-BNG-02": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521341&action=showvalues&plaintext=As+plain+text",
+        "name": "Guacara (OLT-1-2-3-4-5) BNG-02",
+        "type": "FTTH",
+        "group": "Guacara (OLT-1-2-3-4-5-6)"
+    },
+    "FTTH-GYS-NET-BNG-02": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521364&action=showvalues&plaintext=As+plain+text",
+        "name": "Los Guayos (OLT-1-2) BNG-02",
+        "type": "FTTH",
+        "group": "Los Guayos (OLT-1-2)"
+    },
+    "FTTH-GYS-NYC-BNG-02": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521363&action=showvalues&plaintext=As+plain+text",
+        "name": "Paraparal (OLT-3-4-5-6-7-8-9) BNG-02",
+        "type": "FTTH",
+        "group": "Paraparal (OLT-3-4-5-6-7-8-9)"
+    },
+    "FTTH-IL-01": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=423112&action=showvalues&plaintext=As+plain+text",
+        "name": "Isla Larga",
+        "type": "FTTH",
+        "group": "Isla Larga"
+    },
+    "FTTH-TE-01": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=423433&action=showvalues&plaintext=As+plain+text",
+        "name": "Torre Ejecutiva (OLT-1)",
+        "type": "FTTH",
+        "group": "Torre Ejecutiva (OLT-1-2-3-4)"
+    },
+    "FTTH-TE-02": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=423434&action=showvalues&plaintext=As+plain+text",
+        "name": "Torre Ejecutiva (OLT-2)",
+        "type": "FTTH",
+        "group": "Torre Ejecutiva (OLT-1-2-3-4)"
+    },
+    "FTTH-TE-03": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=423435&action=showvalues&plaintext=As+plain+text",
+        "name": "Torre Ejecutiva (OLT-3)",
+        "type": "FTTH",
+        "group": "Torre Ejecutiva (OLT-1-2-3-4)"
+    },
+    "FTTH-TE-04": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=423438&action=showvalues&plaintext=As+plain+text",
+        "name": "Torre Ejecutiva (OLT-4)",
+        "type": "FTTH",
+        "group": "Torre Ejecutiva (OLT-1-2-3-4)"
+    },
+    "FTTH-LSP-01": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=423582&action=showvalues&plaintext=As+plain+text",
+        "name": "La Sorpresa(OLT-1)",
+        "type": "FTTH",
+        "group": "La Sorpresa(OLT-1-2-3)"
+    },
+    "FTTH-LSP-02": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=423583&action=showvalues&plaintext=As+plain+text",
+        "name": "La Sorpresa(OLT-2)",
+        "type": "FTTH",
+        "group": "La Sorpresa(OLT-1-2-3)"
+    },
+    "FTTH-LSP-03": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438543&action=showvalues&plaintext=As+plain+text",
+        "name": "La Sorpresa(OLT-3)",
+        "type": "FTTH",
+        "group": "La Sorpresa(OLT-1-2-3)"
+    },
+    "FTTH-CEC-01": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=200852&action=showvalues&plaintext=As+plain+text",
+        "name": "Caribe (OLT-1)",
+        "type": "FTTH",
+        "group": "Caribe (OLT-1-2-3-4-6-7)"
+    },
+    "FTTH-CEC-02": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=200853&action=showvalues&plaintext=As+plain+text",
+        "name": "Caribe (OLT-2)",
+        "type": "FTTH",
+        "group": "Caribe (OLT-1-2-3-4-6-7)"
+    },
+    "FTTH-CEC-03": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=200854&action=showvalues&plaintext=As+plain+text",
+        "name": "Caribe (OLT-3)",
+        "type": "FTTH",
+        "group": "Caribe (OLT-1-2-3-4-6-7)"
+    },
+    "FTTH-CEC-04": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=200857&action=showvalues&plaintext=As+plain+text",
+        "name": "Caribe (OLT-4)",
+        "type": "FTTH",
+        "group": "Caribe (OLT-1-2-3-4-6-7)"
+    },
+    "FTTH-CEC-06": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=200856&action=showvalues&plaintext=As+plain+text",
+        "name": "Caribe (OLT-6)",
+        "type": "FTTH",
+        "group": "Caribe (OLT-1-2-3-4-6-7)"
+    },
+    "FTTH-CEC-07": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=563470&action=showvalues&plaintext=As+plain+text",
+        "name": "Caribe (OLT-7)",
+        "type": "FTTH",
+        "group": "Caribe (OLT-1-2-3-4-6-7)"
+    },
+    "FTTH-CEC-MRT-01": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=200855&action=showvalues&plaintext=As+plain+text",
+        "name": "La Morita(OLT-5)",
+        "type": "FTTH",
+        "group": "La Morita(OLT-5)"
+    },
+    "FTTH-CGA-01": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=430657&action=showvalues&plaintext=As+plain+text",
+        "name": "Cagua (OLT-1)",
+        "type": "FTTH",
+        "group": "Cagua(OLT-1-2-3-4-5-6-7-8)"
+    },
+    "FTTH-CGA-02": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=430658&action=showvalues&plaintext=As+plain+text",
+        "name": "Cagua (OLT-2)",
+        "type": "FTTH",
+        "group": "Cagua(OLT-1-2-3-4-5-6-7-8)"
+    },
+    "FTTH-CGA-03": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=430659&action=showvalues&plaintext=As+plain+text",
+        "name": "Cagua (OLT-3)",
+        "type": "FTTH",
+        "group": "Cagua(OLT-1-2-3-4-5-6-7-8)"
+    },
+    "FTTH-CGA-04": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=458022&action=showvalues&plaintext=As+plain+text",
+        "name": "Cagua (OLT-4)",
+        "type": "FTTH",
+        "group": "Cagua(OLT-1-2-3-4-5-6-7-8)"
+    },
+    "FTTH-CGA-05": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=458023&action=showvalues&plaintext=As+plain+text",
+        "name": "Cagua (OLT-5)",
+        "type": "FTTH",
+        "group": "Cagua(OLT-1-2-3-4-5-6-7-8)"
+    },
+    "FTTH-CGA-06": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=527168&action=showvalues&plaintext=As+plain+text",
+        "name": "Cagua (OLT-6)",
+        "type": "FTTH",
+        "group": "Cagua(OLT-1-2-3-4-5-6-7-8)"
+    },
+    "FTTH-CGA-07": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=527169&action=showvalues&plaintext=As+plain+text",
+        "name": "Cagua (OLT-7)",
+        "type": "FTTH",
+        "group": "Cagua(OLT-1-2-3-4-5-6-7-8)"
+    },
+    "FTTH-CGA-08": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=553797&action=showvalues&plaintext=As+plain+text",
+        "name": "Cagua (OLT-8)",
+        "type": "FTTH",
+        "group": "Cagua(OLT-1-2-3-4-5-6-7-8)"
+    },
+    "FTTH-SJQ-BNG-2": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521369&action=showvalues&plaintext=As+plain+text",  
+        "name": "San Joaquín(OLT-1-2-3) BNG-2",
+        "type": "FTTH",
+        "group": "San Joaquín(OLT-1-2-3)"
+    },
+    "FTTH-TM-BNG-2": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521366&action=showvalues&plaintext=As+plain+text",
+        "name": "Torre Movilnet (OLT-1-2) BNG-2",
+        "type": "FTTH",
+        "group": "Torre Movilnet (OLT-1-2)"
+    },
+    "FTTH-TCY-BNG-2": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521370&action=showvalues&plaintext=As+plain+text", 
+        "name": "Tocuyito (OLT-1) BNG-2",
+        "type": "FTTH",
+        "group": "Tocuyito (OLT-1)"
+    }
+}

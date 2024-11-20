@@ -10,7 +10,7 @@ export const siteConfig = {
     },
     {
       label: "Configuracion",
-      href: "/config-page",
+      href: "/login",
     },
     {
       label: "ONU's Config",
@@ -19,10 +19,6 @@ export const siteConfig = {
     {
       label: "Caluladora BCV",
       href: "/calculator",
-    },
-    {
-      label: "Login",
-      href: "/login",
     },
     {
       label: "NetcomBook",

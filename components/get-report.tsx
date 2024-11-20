@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CodeBlock } from '@/components/copy';
 
-export const GetReport: React.FC = () => {
+export const GetReport: React.FC<{ test?: boolean }> = ({ test = false }) => {   
     const [progress, setProgress] = useState<number>(0);
     const [simpleResult, setSimpleResult] = useState<string>('');
     const [detailedResult, setDetailedResult] = useState<string>('');
@@ -11,7 +11,7 @@ export const GetReport: React.FC = () => {
     const handleStart = () => {
         setLoading(true);
         setSimpleResult('  Cargando el reporte... ');
-        setDetailedResult('Por favor espere 30 sec');
+        setDetailedResult('Por favor espere 30 seg');
         setProgress(0);
 
         let currentProgress = 0;
@@ -23,23 +23,59 @@ export const GetReport: React.FC = () => {
                 clearInterval(interval);
             }
         }, 30); // Update every 600 ms for a 60-second total duration
-
-        fetch('/api/get-report-zabbix')
-            .then(response => response.json())
+        if (test) {
+            fetch('/api/get-report-zabbix-test')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(data => {
                 setProgress(100);
-                setSimpleResult(data.message.simpleResult); 
-                setDetailedResult(data.message.detailedResult); 
+                if (data && data.message) {
+                    setSimpleResult(data.message.simpleResult); 
+                    setDetailedResult(data.message.detailedResult); 
+                } else {
+                    setSimpleResult('Error fetching data.');
+                    setDetailedResult('');
+                }
                 setLoading(false);
             })
             .catch(error => {
-                setProgress(50); 
-                console.error('Error:', error);
+                console.error('Error:', error.message);
                 setSimpleResult('Error fetching data.');
                 setDetailedResult('');
                 setLoading(false);
             });
+        } else {  
+            fetch('/api/get-report-zabbix')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    setProgress(100);
+                    if (data && data.message) {
+                        setSimpleResult(data.message.simpleResult); 
+                        setDetailedResult(data.message.detailedResult); 
+                    } else {
+                        setSimpleResult('Error fetching data.');
+                        setDetailedResult('');
+                    }
+                    setLoading(false);
+                })
+                .catch(error => {
+                    console.error('Error:', error.message);
+                    setSimpleResult('Error fetching data.');
+                    setDetailedResult('');
+                    setLoading(false);
+                });
+            };
     };
+
 
     useEffect(() => {
         handleStart(); 
