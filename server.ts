@@ -11,7 +11,7 @@ import { scheduleExecution } from '@/modules/schedule/task';
 
 const port: number = Number(process.env.PORT) || 443;
 const httpPort: number = 80;
-const address: string = process.env.SERVER || '192.168.1.3';
+const address: string = process.env.SERVER || 'localhost';
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });

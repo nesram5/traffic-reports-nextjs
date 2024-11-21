@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import DefaultLayout from "@/layouts/default";
 import { DropDownList } from '@/components/drop-down-list/main';
+import { NewDropDown } from '@/components/new-drop-down/main';
 import { ModalGetReport } from '@/components/modal-get-report';
 
 export default function Component() {
