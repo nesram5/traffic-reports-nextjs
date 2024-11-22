@@ -31,9 +31,9 @@ app.prepare().then(() => {
   });
 
   // Establish database connection and fetch initial data
-  //connectDB().catch((error) => console.error('Error connecting to DB:', error));
-  //fetchTrafficDataFromDB().catch((error) => console.error('Error fetching initial traffic data:', error));
-  //scheduleExecution();
+  connectDB().catch((error) => console.error('Error connecting to DB:', error));
+  fetchTrafficDataFromDB().catch((error) => console.error('Error fetching initial traffic data:', error));
+  scheduleExecution();
   // Create HTTP server for redirection to HTTPS
   const httpServer = http.createServer((req, res) => {
     res.writeHead(301, { Location: `https://${address}:${port}${req.url}` });

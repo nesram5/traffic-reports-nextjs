@@ -3052,3 +3052,8 @@ Error opening link function link() { [native code] }: check the JSON file 2024-1
 Error opening link function link() { [native code] }: check the JSON file 2024-11-20 15:20:38
 Error opening link function link() { [native code] }: check the JSON file 2024-11-20 15:20:47
 Error opening link function link() { [native code] }: check the JSON file 2024-11-20 15:20:48
+Error connecting to the page: 2024-11-21 22:32:10
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=481902&action=showvalues&plaintext=As+plain+text: check the JSON file 2024-11-21 22:32:22
+Function executed at: 10:32:43 p. m.
+Function executed at: 10:34:04 p. m.
+Function executed at: 10:56:00 p. m.

@@ -1,4 +1,4 @@
-import { IMonthGroup } from '@/modules/handlerDB/date-group';
+import { IYearGroup, IMonthGroup, IDayGroup } from '@/lib/types';
 import { CompTrafficData } from '@/modules/handlerDB/schema';
 import fs from 'fs';
 import path from 'path';
@@ -9,7 +9,7 @@ export async function fetchTrafficDataFromDB() {
         const trafficData = await CompTrafficData.find().sort({ 'data.deviceId': 1 });
 
         // Structure to hold transformed data
-        const monthData: IMonthGroup[] = [];
+        const yearData: IYearGroup[] = [];
 
         // Array for month names
         const monthNames = [
@@ -25,17 +25,24 @@ export async function fetchTrafficDataFromDB() {
                 const day = timestamp.getDate();
                 const hour = timestamp.getHours();
                 const minute = timestamp.getMinutes();
+                const year = timestamp.getFullYear().toString();
 
                 // Convert numeric month, day, and hour to string formats
                 const monthStr = monthNames[month]; // Convert month number to string
                 const dayStr = day.toString().padStart(2, '0'); // Ensure day has two digits
                 const hourStr = hour.toString().padStart(2, '0') + ":" + minute.toString().padStart(2, '0'); // Format hour as "HH:mm"
 
+                let yearGroup = yearData.find(y => y.year === year);
+                if (!yearGroup) {
+                    yearGroup = { year: year, monthGroups: [] };
+                    yearData.push(yearGroup);
+                }
+
                 // Check if the month group already exists
-                let monthGroup = monthData.find(m => m.month === monthStr);
+                let monthGroup = yearGroup.monthGroups.find(m => m.month === monthStr);
                 if (!monthGroup) {
                     monthGroup = { month: monthStr, dayGroups: [] };
-                    monthData.push(monthGroup);
+                    yearGroup.monthGroups.push(monthGroup);
                 }
 
                 // Check if the day group already exists
@@ -61,7 +68,7 @@ export async function fetchTrafficDataFromDB() {
         }
 
         // Write to cache file
-        fs.writeFileSync(cacheFile, JSON.stringify(monthData, null, 2));
+        fs.writeFileSync(cacheFile, JSON.stringify(yearData, null, 2));
         //console.log('Traffic data cache file updated');
 
     } catch (err) {

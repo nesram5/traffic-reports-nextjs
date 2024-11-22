@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 interface CodeBlockProps {
-  code: string;
+  code: any;
 }
 
 export const CodeBlock: React.FC<CodeBlockProps> = ({ code }) => {
