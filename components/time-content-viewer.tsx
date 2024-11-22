@@ -133,23 +133,21 @@ export default function TimeContentViewer() {
     if (data.length > 0) {
       const mostRecent = getMostRecentItem(data);
       if (mostRecent) {
-        setSearchParams({
-          year: mostRecent.year,
-          month: mostRecent.month,
-          day: mostRecent.day,
-          hour: mostRecent.hour
-        });
-        setCurrentItems(mostRecent.items);
+        const { year, month, day, hour } = mostRecent;
+        setSearchParams({ year, month, day, hour });
+        const items = getItemsForSearchParams(data, { year, month, day, hour });
+        setCurrentItems(items);
         setCurrentIndex(0);
       }
     }
-  }, [data]);
+  }, [data, getItemsForSearchParams, setSearchParams, setCurrentItems, setCurrentIndex]);
 
   useEffect(() => {
     const items = getItemsForSearchParams(data, searchParams);
     setCurrentItems(items);
     setCurrentIndex(0);
   }, [data, searchParams]);
+
 
   function getMostRecentItem(data: IYearGroup[]) {
     const now = new Date();
@@ -207,31 +205,40 @@ export default function TimeContentViewer() {
     };
   }
 
-  function getItemsForSearchParams(data: IYearGroup[], searchParams: { year: string, month: string, day: string, hour: string }) {
-    let result = data;
-    const { year, month, day, hour } = searchParams;
-
+  function getItemsForSearchParams(
+    data: IYearGroup[],
+    searchParams: { year: string; month: string; day: string; hour: string }
+  ) {
+    let result: any = data;
+    const { year, month, day: dayParam, hour } = searchParams;
+  
     if (year) {
-      result = result.filter(y => y.year === year);
+      result = result.filter((y: IYearGroup) => y.year === year);
     }
     if (month && result.length > 0) {
-      result = result.flatMap(y => y.monthGroups.filter(m => m.month === month));
+      result = (result as IYearGroup[]).flatMap((y: IYearGroup) =>
+        y.monthGroups.filter((m: IMonthGroup) => m.month === month)
+      ) as IMonthGroup[];
     } else if (!month && result.length > 0) {
-      result = result.flatMap(y => y.monthGroups);
+      result = (result as IYearGroup[]).flatMap((y: IYearGroup) => y.monthGroups) as IMonthGroup[];
     }
-    if (day && result.length > 0) {
-      result = result.flatMap(m => m.dayGroups.filter(d => d.day === day));
-    } else if (!day && result.length > 0) {
-      result = result.flatMap(m => m.dayGroups);
+    if (dayParam && result.length > 0) {
+      result = (result as IMonthGroup[]).flatMap((m: IMonthGroup) =>
+        m.dayGroups.filter((d: IDayGroup) => d.day === dayParam)
+      ) as IDayGroup[];
+    } else if (!dayParam && result.length > 0) {
+      result = (result as IMonthGroup[]).flatMap((m: IMonthGroup) => m.dayGroups) as IDayGroup[];
     }
     if (hour && result.length > 0) {
-      result = result.flatMap(d => d.groupItems.filter(g => g.hour === hour));
+      result = (result as IDayGroup[]).flatMap((d: IDayGroup) =>
+        d.groupItems.filter((g: IGroupItem) => g.hour === hour)
+      ) as IGroupItem[];
     } else if (!hour && result.length > 0) {
-      result = result.flatMap(d => d.groupItems);
+      result = (result as IDayGroup[]).flatMap((d: IDayGroup) => d.groupItems) as IGroupItem[];
     }
-    return result.flatMap(g => g.items || []);
-  }
-
+    return (result as IGroupItem[]).flatMap((g: IGroupItem) => g.items || []);
+  };
+  
   const handlePrevious = () => {
     setCurrentIndex(prev => Math.max(0, prev - 1));
   };
