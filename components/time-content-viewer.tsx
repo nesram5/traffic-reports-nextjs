@@ -129,18 +129,18 @@ export default function TimeContentViewer() {
     setSearchParams(prev => ({ ...prev, hour: '' }));
   }, [searchParams.day]);
 
-  useEffect(() => {
-    if (data.length > 0) {
-      const mostRecent = getMostRecentItem(data);
-      if (mostRecent) {
-        const { year, month, day, hour } = mostRecent;
-        setSearchParams({ year, month, day, hour });
-        const items = getItemsForSearchParams(data, { year, month, day, hour });
-        setCurrentItems(items);
-        setCurrentIndex(0);
-      }
+useEffect(() => {
+  if (data.length > 0) {
+    const mostRecent = getMostRecentItem(data);
+    if (mostRecent) {
+      const { year, month, day, hour } = mostRecent;
+      setSearchParams({ year, month, day, hour });
+      const items = getItemsForSearchParams(data, { year, month, day, hour });
+      setCurrentItems(items);
+      setCurrentIndex(0);
     }
-  }, [data, getItemsForSearchParams, setSearchParams, setCurrentItems, setCurrentIndex]);
+  }
+}, [data]);
 
   useEffect(() => {
     const items = getItemsForSearchParams(data, searchParams);
