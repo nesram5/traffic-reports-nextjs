@@ -140,7 +140,7 @@ useEffect(() => {
       setCurrentIndex(0);
     }
   }
-}, [data]);
+}, [data, getItemsForSearchParams, setSearchParams, setCurrentItems, setCurrentIndex]);
 
   useEffect(() => {
     const items = getItemsForSearchParams(data, searchParams);
