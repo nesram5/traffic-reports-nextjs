@@ -20,3 +20,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).json({ message: 'Method not allowed' });
   }
 }
+
+export const config = {
+  api: {
+    responseLimit: false,
+  },
+}
