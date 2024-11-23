@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Button} from '@nextui-org/react';
+import { Button, Card} from '@nextui-org/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { CodeBlock } from '@/components/copy';
 import { DateSearchComponent } from '@/components/search-component';
@@ -217,23 +217,25 @@ export default function TimeContentViewer() {
           </Button>
         </div>
       )}
-      <section className='relative flex items-center justify-center'>
-        <DateSearchComponent searchParams={searchParams} setSearchParams={setSearchParams} yearGroups={data} />    
-        <Button
-              className='m-2'
-              color="primary"
-              onPress={handleSearch}
-            >
-              Search
-        </Button>
-        <Button
-              className='m-2'
-              color="danger"
-              onPress={handleResetSearch}
-            >
-              Reset
-        </Button>
-      </section>
+      <Card className="p-4 w-9/12">
+        <div className='relative flex items-center justify-center'>
+          <DateSearchComponent searchParams={searchParams} setSearchParams={setSearchParams} yearGroups={data} />    
+          <Button
+                className='m-2'
+                color="primary"
+                onPress={handleSearch}
+              >
+                Search
+          </Button>
+          <Button
+                className='m-2'
+                color="danger"
+                onPress={handleResetSearch}
+              >
+                Reset
+          </Button>
+        </div>
+      </Card>
     </div>    
     </main>
   );

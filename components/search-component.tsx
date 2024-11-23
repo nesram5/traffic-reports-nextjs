@@ -62,7 +62,7 @@ import { IYearGroup, IItem} from '@/lib/types';
     };
   
     return (
-      <Card className="p-4">
+      <div className="p-4">
         <h2 className="text-lg font-semibold mb-4 text-center">Buscar una fecha específica</h2>
         <div className="flex gap-4 justify-center items-center flex-wrap">
           <Dropdown>
@@ -150,7 +150,7 @@ import { IYearGroup, IItem} from '@/lib/types';
             </DropdownMenu>
           </Dropdown>
         </div>
-      </Card>
+      </div>
     );
   };
   
