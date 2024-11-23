@@ -2,7 +2,6 @@ import { IYearGroup, IMonthGroup, IDayGroup } from '@/lib/types';
 import { CompTrafficData } from '@/modules/handlerDB/schema';
 import fs from 'fs';
 import path from 'path';
-const cacheFile = path.join(process.cwd(), 'cache/trafficDataCache.json');
 
 export async function fetchTrafficDataFromDB() {
     try {
@@ -30,7 +29,11 @@ export async function fetchTrafficDataFromDB() {
                 // Convert numeric month, day, and hour to string formats
                 const monthStr = monthNames[month]; // Convert month number to string
                 const dayStr = day.toString().padStart(2, '0'); // Ensure day has two digits
-                const hourStr = hour.toString().padStart(2, '0') + ":" + minute.toString().padStart(2, '0'); // Format hour as "HH:mm"
+
+                // Convert hour to 12-hour format with a.m./p.m.
+                const period = hour >= 12 ? 'p.m.' : 'a.m.';
+                const hour12 = hour % 12 || 12; // Convert 0 to 12 for 12-hour format
+                const hourStr = `${hour12.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')} ${period}`;
 
                 let yearGroup = yearData.find(y => y.year === year);
                 if (!yearGroup) {
@@ -68,6 +71,7 @@ export async function fetchTrafficDataFromDB() {
         }
 
         // Write to cache file
+        const cacheFile = path.join(process.cwd(), 'cache/trafficDataCache.json');
         fs.writeFileSync(cacheFile, JSON.stringify(yearData, null, 2));
         //console.log('Traffic data cache file updated');
 
