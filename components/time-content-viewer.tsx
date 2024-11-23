@@ -225,7 +225,7 @@ export default function TimeContentViewer() {
                 color="primary"
                 onPress={handleSearch}
               >
-                Search
+                Buscar
           </Button>
           <Button
                 className='m-2'
