@@ -68,7 +68,7 @@ import { IYearGroup, IItem} from '@/lib/types';
           <Dropdown>
             <DropdownTrigger>
               <Button variant="bordered" endContent={<ChevronDown className="w-4 h-4" />}>
-                {searchParams.year || 'Year'}
+                {searchParams.year || 'Año'}
               </Button>
             </DropdownTrigger>
             <DropdownMenu
@@ -94,7 +94,7 @@ import { IYearGroup, IItem} from '@/lib/types';
             } 
             disabled={!searchParams.year}
           >
-                {searchParams.month || 'Month'}
+                {searchParams.month || 'Mes'}
               </Button>
             </DropdownTrigger>
             <DropdownMenu
@@ -113,7 +113,7 @@ import { IYearGroup, IItem} from '@/lib/types';
           <Dropdown>
             <DropdownTrigger>
               <Button variant="bordered" endContent={<ChevronDown className={`w-4 h-4" ${searchParams.month ? '' : 'opacity-50'}`} />} disabled={!searchParams.month}>
-                {searchParams.day || 'Day'}
+                {searchParams.day || 'Dia'}
               </Button>
             </DropdownTrigger>
             <DropdownMenu
@@ -133,7 +133,7 @@ import { IYearGroup, IItem} from '@/lib/types';
           <Dropdown>
             <DropdownTrigger>
               <Button variant="bordered" endContent={<ChevronDown className={`w-4 h-4" ${searchParams.day ? '' : 'opacity-50'}`} />} disabled={!searchParams.day}>
-                {searchParams.hour || 'Hour'}
+                {searchParams.hour || 'Hora'}
               </Button>
             </DropdownTrigger>
             <DropdownMenu
