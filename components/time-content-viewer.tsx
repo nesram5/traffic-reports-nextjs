@@ -1,44 +1,25 @@
 import { useState, useEffect } from 'react';
-import {
-  Card, Button, Dropdown, DropdownTrigger,
-  DropdownMenu, DropdownItem
-} from '@nextui-org/react';
-import { ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
+import { Button} from '@nextui-org/react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { CodeBlock } from '@/components/copy';
+import { DateSearchComponent } from '@/components/search-component';
+import { IYearGroup, IItem } from '@/lib/types';
 
-interface IItem {
-  first: string;
-  second: string;
-}
 
-interface IGroupItem {
-  hour: string;
-  items: IItem[];
-}
-
-interface IDayGroup {
-  day: string;
-  groupItems: IGroupItem[];
-}
-
-interface IMonthGroup {
-  month: string;
-  dayGroups: IDayGroup[];
-}
-
-interface IYearGroup {
-  year: string;
-  monthGroups: IMonthGroup[];
-}
 
 export default function TimeContentViewer() {
   const [data, setData] = useState<IYearGroup[]>([]);
+  const [first, setFirst ] = useState<string | undefined >(undefined);
+  const [second, setSecond ] = useState<string | undefined >(undefined);  
+  const [hour, setHour ] = useState<string>('');
+  const [day, setDay ] = useState<string>('');
+  const [month, setMonth ] = useState<string>('');
+  const [year, setYear] = useState<string>('');
+  const [searching, setSerching] = useState<boolean>(false);
+  const [value, setValue] = useState<IItem>();
+
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [years, setYears] = useState<string[]>([]);
-  const [months, setMonths] = useState<string[]>([]);
-  const [days, setDays] = useState<string[]>([]);
-  const [hours, setHours] = useState<string[]>([]);
   const [searchParams, setSearchParams] = useState({
     year: '',
     month: '',
@@ -47,6 +28,48 @@ export default function TimeContentViewer() {
   });
   const [currentItems, setCurrentItems] = useState<IItem[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+
+  const getFirstValue = (data: IYearGroup[]): { first: string, second: string } | null => {
+    if (!data || !Array.isArray(data) || data.length === 0) {
+      return null;
+    }
+    const lastYearGroup = data[data.length - 1];
+    if (!lastYearGroup || !Array.isArray(lastYearGroup.monthGroups) || lastYearGroup.monthGroups.length === 0) {
+      return null;
+    }
+    
+    //Save the year name for the H1
+    setYear(lastYearGroup.year);
+
+    const lastMonthGroup = lastYearGroup.monthGroups[lastYearGroup.monthGroups.length - 1];
+    if (!lastMonthGroup || !Array.isArray(lastMonthGroup.dayGroups) || lastMonthGroup.dayGroups.length === 0) {
+      return null;
+    }
+    //Save the month name for the H1
+    setMonth(lastMonthGroup.month);
+
+    const lastDayGroup = lastMonthGroup.dayGroups[lastMonthGroup.dayGroups.length - 1];
+    if (!lastDayGroup || !Array.isArray(lastDayGroup.groupItems) || lastDayGroup.groupItems.length === 0) {
+      return null;
+    }
+    //Save the day number for the H1
+    setDay(lastDayGroup.day);
+    
+    const lastGroupItem = lastDayGroup.groupItems[lastDayGroup.groupItems.length - 1];
+    if (!lastGroupItem || !Array.isArray(lastGroupItem.items) || lastGroupItem.items.length === 0) {
+      return null;
+    }
+
+    //Save the hour name for the H1
+    setHour(lastGroupItem.hour);
+
+    const firstItem = lastGroupItem.items[0];
+    if (!firstItem) {
+      return null;
+    }
+    return { first: firstItem.first, second: firstItem.second };
+  };
 
   useEffect(() => {
     const fetchLiveData = async () => {
@@ -76,168 +99,17 @@ export default function TimeContentViewer() {
 
     // Fetch data initially when the component mounts
     fetchLiveData();
-
     // Cleanup the interval on component unmount
     return () => clearInterval(intervalId);
   }, []);
-
+  
   useEffect(() => {
-    if (data.length > 0) {
-      setYears(data.map(yearGroup => yearGroup.year));
-    }
+    const values = getFirstValue(data);
+    setFirst(values?.first);
+    setSecond(values?.second)
   }, [data]);
 
-  useEffect(() => {
-    const selectedYear = data.find(item => item.year === searchParams.year);
-    if (selectedYear) {
-      setMonths([...new Set(selectedYear.monthGroups.map(monthGroup => monthGroup.month))]);
-    } else {
-      setMonths([]);
-    }
-  }, [data, searchParams.year]);
 
-  useEffect(() => {
-    const selectedYear = data.find(item => item.year === searchParams.year);
-    const selectedMonth = selectedYear?.monthGroups.find(item => item.month === searchParams.month);
-    if (selectedMonth) {
-      setDays([...new Set(selectedMonth.dayGroups.map(dayGroup => dayGroup.day))]);
-    } else {
-      setDays([]);
-    }
-  }, [data, searchParams.year, searchParams.month]);
-
-  useEffect(() => {
-    const selectedYear = data.find(item => item.year === searchParams.year);
-    const selectedMonth = selectedYear?.monthGroups.find(item => item.month === searchParams.month);
-    const selectedDay = selectedMonth?.dayGroups.find(item => item.day === searchParams.day);
-    if (selectedDay) {
-      setHours([...new Set(selectedDay.groupItems.map(groupItem => groupItem.hour))]);
-    } else {
-      setHours([]);
-    }
-  }, [data, searchParams.year, searchParams.month, searchParams.day]);
-
-  useEffect(() => {
-    setSearchParams(prev => ({ ...prev, month: '', day: '', hour: '' }));
-  }, [searchParams.year]);
-
-  useEffect(() => {
-    setSearchParams(prev => ({ ...prev, day: '', hour: '' }));
-  }, [searchParams.month]);
-
-  useEffect(() => {
-    setSearchParams(prev => ({ ...prev, hour: '' }));
-  }, [searchParams.day]);
-
-useEffect(() => {
-  if (data.length > 0) {
-    const mostRecent = getMostRecentItem(data);
-    if (mostRecent) {
-      const { year, month, day, hour } = mostRecent;
-      setSearchParams({ year, month, day, hour });
-      const items = getItemsForSearchParams(data, { year, month, day, hour });
-      setCurrentItems(items);
-      setCurrentIndex(0);
-    }
-  }
-}, [data, getItemsForSearchParams, setSearchParams, setCurrentItems, setCurrentIndex]);
-
-  useEffect(() => {
-    const items = getItemsForSearchParams(data, searchParams);
-    setCurrentItems(items);
-    setCurrentIndex(0);
-  }, [data, searchParams]);
-
-
-  function getMostRecentItem(data: IYearGroup[]) {
-    const now = new Date();
-    const currentYear = now.getFullYear();
-    const currentMonth = now.getMonth();
-    const currentDay = now.getDate();
-    const currentHour = now.getHours();
-    const currentMinute = now.getMinutes();
-
-    const monthNames = [
-      "enero", "febrero", "marzo", "abril", "mayo", "junio",
-      "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
-    ];
-    const currentMonthStr = monthNames[currentMonth];
-    const currentHourStr = currentHour.toString().padStart(2, '0') + ':' + currentMinute.toString().padStart(2, '0');
-
-    let yearGroup = data.find(yg => yg.year === currentYear.toString());
-    if (!yearGroup) {
-      yearGroup = data[data.length - 1];
-      if (!yearGroup) {
-        return null;
-      }
-    }
-
-    let monthGroup = yearGroup.monthGroups.find(mg => mg.month === currentMonthStr);
-    if (!monthGroup) {
-      monthGroup = yearGroup.monthGroups[yearGroup.monthGroups.length - 1];
-      if (!monthGroup) {
-        return null;
-      }
-    }
-
-    let dayGroup = monthGroup.dayGroups.find(dg => dg.day === currentDay.toString());
-    if (!dayGroup) {
-      dayGroup = monthGroup.dayGroups[monthGroup.dayGroups.length - 1];
-      if (!dayGroup) {
-        return null;
-      }
-    }
-
-    let hourGroup = dayGroup.groupItems.find(hg => hg.hour === currentHourStr);
-    if (!hourGroup) {
-      hourGroup = dayGroup.groupItems[dayGroup.groupItems.length - 1];
-      if (!hourGroup) {
-        return null;
-      }
-    }
-
-    return {
-      year: yearGroup.year,
-      month: monthGroup.month,
-      day: dayGroup.day,
-      hour: hourGroup.hour,
-      items: hourGroup.items
-    };
-  }
-
-  function getItemsForSearchParams(
-    data: IYearGroup[],
-    searchParams: { year: string; month: string; day: string; hour: string }
-  ) {
-    let result: any = data;
-    const { year, month, day: dayParam, hour } = searchParams;
-  
-    if (year) {
-      result = result.filter((y: IYearGroup) => y.year === year);
-    }
-    if (month && result.length > 0) {
-      result = (result as IYearGroup[]).flatMap((y: IYearGroup) =>
-        y.monthGroups.filter((m: IMonthGroup) => m.month === month)
-      ) as IMonthGroup[];
-    } else if (!month && result.length > 0) {
-      result = (result as IYearGroup[]).flatMap((y: IYearGroup) => y.monthGroups) as IMonthGroup[];
-    }
-    if (dayParam && result.length > 0) {
-      result = (result as IMonthGroup[]).flatMap((m: IMonthGroup) =>
-        m.dayGroups.filter((d: IDayGroup) => d.day === dayParam)
-      ) as IDayGroup[];
-    } else if (!dayParam && result.length > 0) {
-      result = (result as IMonthGroup[]).flatMap((m: IMonthGroup) => m.dayGroups) as IDayGroup[];
-    }
-    if (hour && result.length > 0) {
-      result = (result as IDayGroup[]).flatMap((d: IDayGroup) =>
-        d.groupItems.filter((g: IGroupItem) => g.hour === hour)
-      ) as IGroupItem[];
-    } else if (!hour && result.length > 0) {
-      result = (result as IDayGroup[]).flatMap((d: IDayGroup) => d.groupItems) as IGroupItem[];
-    }
-    return (result as IGroupItem[]).flatMap((g: IGroupItem) => g.items || []);
-  };
   
   const handlePrevious = () => {
     setCurrentIndex(prev => Math.max(0, prev - 1));
@@ -247,11 +119,63 @@ useEffect(() => {
     setCurrentIndex(prev => Math.min(prev + 1, currentItems.length - 1));
   };
 
-  const handleSearch = () => {
-    console.log('Searching for:', searchParams);
-  };
+  const handleSearch = (
+  ) => {
+    let yearGroups = data
+    // Step 1: Find the year group that matches the search year
+    const yearGroup = yearGroups.find(yg => yg.year === searchParams.year);
+    if (!yearGroup) {
+      return; // or return an empty array, depending on your use case
+    }
+     //Save the year name for the H1
+     setYear(yearGroup.year);
+  
+    // Step 2: Find the month group that matches the search month
+    const monthGroup = yearGroup.monthGroups.find(mg => mg.month === searchParams.month);
+    if (!monthGroup) {
+      return;
+    }
+    //Save the month name for the H1
+    setMonth(monthGroup.month);
+  
+    // Step 3: Find the day group that matches the search day
+    const dayGroup = monthGroup.dayGroups.find(dg => dg.day === searchParams.day);
+    if (!dayGroup) {
+      return;
+    }
+    //Save the day name for the H1
+    setDay(dayGroup.day);
+  
+    // Step 4: Find the group item that matches the search hour
+    const groupItem = dayGroup.groupItems.find(gi => gi.hour === searchParams.hour);
+    if (!groupItem) {
+      return;
+    }
+    //Save the hour name for the H1
+    setHour(groupItem.hour);
 
-  return (
+    const items = groupItem.items[0];
+    setSerching(true);
+    setValue(items);
+  }
+
+  const handleResetSearch = () => {
+    setSearchParams( {year: '',
+      month: '',
+      day: '',
+      hour: ''});
+      
+    const values = getFirstValue(data);
+    setFirst(values?.first);
+    setSecond(values?.second)
+    setSerching(false);
+
+  }
+  return (    
+    <main className="flex-1 p-6 flex flex-col items-center ">   
+    <h1 className="text-3xl font-bold mb-6">Reporte de tráfico correspondiente al</h1>
+    <h2 className="text-2xl italic mb-6"> {day} de {month} del {year} a las {hour}</h2>
+
     <div className="max-w-6xl mx-auto p-4">
       {loading && <div>Loading...</div>}
       {error && <div>Error: {error}</div>}
@@ -267,14 +191,18 @@ useEffect(() => {
             <ChevronLeft className="w-6 h-6" />
           </Button>
 
-          <div className="flex gap-4 px-12">
-            {currentItems.length > 0 ? (
+          <div className="flex place-items-start gap-4 px-12">
+            {!searching && (            
               <>
-                <CodeBlock code={currentItems[currentIndex]?.first || 'No content available'} />
-                <CodeBlock code={currentItems[currentIndex]?.second || 'No content available'} />
+                <CodeBlock code={first || 'No content available'} />
+                <CodeBlock code={second || 'No content available'} />
               </>
-            ) : (
-              <p>No items found for the selected parameters.</p>
+            )}
+            {searching && (            
+              <>
+                <CodeBlock code={value?.first || 'No content available'} />
+                <CodeBlock code={value?.second || 'No content available'} />
+              </>
             )}
           </div>
 
@@ -289,87 +217,24 @@ useEffect(() => {
           </Button>
         </div>
       )}
-
-      <Card className="p-4">
-        <h2 className="text-lg font-semibold mb-4 text-center">Buscar una fecha específica</h2>
-        <div className="flex gap-4 justify-center items-center flex-wrap">
-          <Dropdown>
-            <DropdownTrigger>
-              <Button variant="bordered" endContent={<ChevronDown className="w-4 h-4" />}>
-                {searchParams.year !== undefined ? searchParams.year.toString() : 'Year'}
-              </Button>
-            </DropdownTrigger>
-            <DropdownMenu
-              aria-label="Year selection"
-              onAction={(key) => setSearchParams({ ...searchParams, year: key ? key.toString() : '' })}
+      <section className='relative flex items-center justify-center'>
+        <DateSearchComponent searchParams={searchParams} setSearchParams={setSearchParams} yearGroups={data} />    
+        <Button
+              className='m-2'
+              color="primary"
+              onPress={handleSearch}
             >
-              {years.map(year => (
-                <DropdownItem key={year} value={year.toString()}>
-                  {year}
-                </DropdownItem>
-              ))}
-            </DropdownMenu>
-          </Dropdown>
-
-          <Dropdown>
-            <DropdownTrigger>
-              <Button variant="bordered" endContent={<ChevronDown className="w-4 h-4" />}>
-                {searchParams.month || 'Month'}
-              </Button>
-            </DropdownTrigger>
-            <DropdownMenu
-              aria-label="Month selection"
-              onAction={(key) => setSearchParams({ ...searchParams, month: key.toString() })}
+              Search
+        </Button>
+        <Button
+              className='m-2'
+              color="danger"
+              onPress={handleResetSearch}
             >
-              {months.map(month => (
-                <DropdownItem key={month} value={month}>
-                  {month}
-                </DropdownItem>
-              ))}
-            </DropdownMenu>
-          </Dropdown>
-
-          <Dropdown>
-            <DropdownTrigger>
-              <Button variant="bordered" endContent={<ChevronDown className="w-4 h-4" />}>
-                {searchParams.day || 'Day'}
-              </Button>
-            </DropdownTrigger>
-            <DropdownMenu
-              aria-label="Day selection"
-              onAction={(key) => setSearchParams({ ...searchParams, day: key.toString() })}
-            >
-              {days.map(day => (
-                <DropdownItem key={day} value={day}>
-                  {day}
-                </DropdownItem>
-              ))}
-            </DropdownMenu>
-          </Dropdown>
-
-          <Dropdown>
-            <DropdownTrigger>
-              <Button variant="bordered" endContent={<ChevronDown className="w-4 h-4" />}>
-                {searchParams.hour || 'Hour'}
-              </Button>
-            </DropdownTrigger>
-            <DropdownMenu
-              aria-label="Hour selection"
-              onAction={(key) => setSearchParams({ ...searchParams, hour: key.toString() })}
-            >
-              {hours.map(hour => (
-                <DropdownItem key={hour} value={hour}>
-                  {hour}
-                </DropdownItem>
-              ))}
-            </DropdownMenu>
-          </Dropdown>
-
-          <Button color="primary" onClick={handleSearch}>
-            Search
-          </Button>
-        </div>
-      </Card>
-    </div>
+              Reset
+        </Button>
+      </section>
+    </div>    
+    </main>
   );
 }

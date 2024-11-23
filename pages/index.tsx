@@ -8,15 +8,9 @@ import { ModalGetReport } from '@/components/modal-get-report';
 export default function Component() {
   return (
     <DefaultLayout>
-    <div className="flex flex-col min-h-screen ">
-      <div className="flex flex-1">
-        <main className="flex-1 p-6 flex flex-col items-center ">
-          <h1 className="text-3xl font-bold mb-6">Reportes de tráfico por hora</h1>
-           <section className="w-full flex-col-reverse">
+    <div className="flex flex-col min-h-screen">
+      <div className="flex flex-1"> 
           <TimeContentViewer />
-          </section>
-        </main>
-
         <aside className="w-64 p-6 ">
           <h2 className="text-xl font-semibold mb-4">Generar nuevo reporte</h2>
           <p className="mb-4">

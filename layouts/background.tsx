@@ -22,7 +22,7 @@ export default function WaveAnimatedBackgroundLayout({ children }: { children: R
           </svg>
         </div>
        {/* Scrollable Content Layer */}
-       <div className="relative z-10 h-screen overflow-y-scroll">
+       <div className="relative z-10 h-screen overflow-auto">
           {children}
         </div>
         <style jsx>{`
