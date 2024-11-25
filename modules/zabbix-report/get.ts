@@ -142,8 +142,10 @@ export function getDownloadValue(logs: string, targetTime: any): number | null {
     let closestValue: number | null = null;
     let closestDiff = Infinity;
     const threshold = 240000; // 4 minutes in milliseconds
-
+    
+    let found = false;
     lines.forEach(line => {
+        if (found) return;
         const parts = line.split(' ');
         if (parts.length < 4) return; // Skip lines that don't have enough data
 
@@ -155,13 +157,14 @@ export function getDownloadValue(logs: string, targetTime: any): number | null {
         if (diff < closestDiff && diff <= threshold) {
             closestDiff = diff;
             closestValue = byteValue;
+            found = true; //break the loop
         }
     });
 
     if (closestValue !== null) {
         return closestValue / 1e6; // Convert bytes to MBps and return
     } else {
-        saveToLog(`'No matching timestamp found within the threshold.'`);
+        saveToLog(`No matching timestamp found within the threshold. ${closestDiff}`);
         return null;
     }
 }
