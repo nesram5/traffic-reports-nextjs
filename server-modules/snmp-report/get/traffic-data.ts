@@ -2,7 +2,7 @@ import '@/envConfig';
 import fs from 'fs';
 import path from 'path';
 import snmp from 'snmp-native';
-import { ITrafficData, ITrafficDataSplit } from '@/modules/snmp-report/interfaces/traffic-data';
+import { ITrafficData, ITrafficDataSplit } from '@/server-modules/snmp-report/interfaces/traffic-data';
 
 
 export function readDeviceListComplete(): ITrafficData | string {

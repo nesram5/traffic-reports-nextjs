@@ -1,5 +1,5 @@
 import { IYearGroup, IMonthGroup, IDayGroup } from '@/lib/types';
-import { CompTrafficData } from '@/modules/handlerDB/schema';
+import { CompTrafficData } from '@/server-modules/handlerDB/schema';
 import fs from 'fs';
 import path from 'path';
 

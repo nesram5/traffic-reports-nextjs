@@ -1,8 +1,8 @@
-import { fetchTrafficDataFromDB } from '@/modules/handlerDB/fetch';
-import { autoGetReportSnmp } from '@/modules/snmp-report/main';
-import { autoGetReportZabbix } from '@/modules/zabbix-report/main';
-import { extractUsdValue } from '@/modules/getUSDValue/fetch';
-import { saveToLog } from '@/modules/logger/log';
+import { fetchTrafficDataFromDB } from '@/server-modules/handlerDB/fetch';
+import { autoGetReportSnmp } from '@/server-modules/snmp-report/main';
+import { autoGetReportZabbix } from '@/server-modules/zabbix-report/main';
+import { extractUsdValue } from '@/server-modules/getUSDValue/fetch';
+import { saveToLog } from '@/server-modules/logger/log';
 import cron from 'node-cron';
 import schedule from 'node-schedule';
 

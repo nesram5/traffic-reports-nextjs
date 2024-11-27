@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { getReportZabbix } from '@/modules/zabbix-report/main';
-import { restoreToinit } from '@/modules/zabbix-report/get';
+import { getReportZabbix } from '@/server-modules/zabbix-report/main';
+import { restoreToinit } from '@/server-modules/zabbix-report/get';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'GET') {

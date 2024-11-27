@@ -1,9 +1,9 @@
 import { ISplitReport } from "./interfaces/traffic-data";
-import { readDeviceListComplete, readDeviceListByTimeInterval } from '@/modules/snmp-report/get/traffic-data';
-import { initializeSimpleReport, fechReport } from '@/modules/snmp-report/get/fetch-from-device';
-import { submitToDB } from '@/modules/handlerDB/submit';
-import { mergeResultSimplified , mergeReportsDetailed} from "@/modules/snmp-report/format/merge-results";
-import { simplified_report, detailed_report } from '@/modules/snmp-report/format/message';
+import { readDeviceListComplete, readDeviceListByTimeInterval } from '@/server-modules/snmp-report/get/traffic-data';
+import { initializeSimpleReport, fechReport } from '@/server-modules/snmp-report/get/fetch-from-device';
+import { submitToDB } from '@/server-modules/handlerDB/submit';
+import { mergeResultSimplified , mergeReportsDetailed} from "@/server-modules/snmp-report/format/merge-results";
+import { simplified_report, detailed_report } from '@/server-modules/snmp-report/format/message';
 
 
 export async function getReportSnmp(): Promise<{ simpleResult:string, detailedResult:string}>  {

@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { hasFileChanged } from '@/modules/check/md5';
+import { hasFileChanged } from '@/server-modules/check/md5';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     try{

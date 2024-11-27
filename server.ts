@@ -5,16 +5,16 @@ import fs from 'fs';
 import path from 'path';
 import { parse } from 'url';
 import next from 'next';
-import { connectDB } from '@/modules/handlerDB/connect';
-import { fetchTrafficDataFromDB } from '@/modules/handlerDB/fetch';
-import { scheduleExecution } from '@/modules/schedule/task';
+import { connectDB } from '@/server-modules/handlerDB/connect';
+import { fetchTrafficDataFromDB } from '@/server-modules/handlerDB/fetch';
+import { scheduleExecution } from '@/server-modules/schedule/task';
 
 const port: number = Number(process.env.PORT) || 443;
 const httpPort: number = 80;
 const address: string = process.env.SERVER || 'localhost';
 
 const dev = process.env.NODE_ENV !== 'production';
-const app = next({ });
+const app = next({dev });
 const handle = app.getRequestHandler();
 const options = {
   key: fs.readFileSync(path.join(__dirname, 'key.pem')),

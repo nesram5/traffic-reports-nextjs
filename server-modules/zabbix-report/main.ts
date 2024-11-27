@@ -1,11 +1,11 @@
 import fs from 'fs';
 import path from 'path';
-import { saveToLog } from '@/modules/logger/log';
-import { submitToDB } from '@/modules/handlerDB/submit';
-import {gatherMainData, getDownloadValue, getCurrentTimestamp,closeBrowser, restoreToinit } from '@/modules/zabbix-report/get';
-import { summarizeMbpsAndExtractTypes } from '@/modules/zabbix-report/process';
-import { simplified_report, getCurrentTimeInUTCMinus4, detailed_report} from '@/modules/zabbix-report/message';
-
+import { saveToLog } from '@/server-modules/logger/log';
+import { submitToDB } from '@/server-modules/handlerDB/submit';
+import {gatherMainData, getDownloadValue, getCurrentTimestamp,closeBrowser, restoreToinit } from '@/server-modules/zabbix-report/get';
+import { summarizeMbpsAndExtractTypes } from '@/server-modules/zabbix-report/process';
+import { simplified_report, getCurrentTimeInUTCMinus4, detailed_report} from '@/server-modules/zabbix-report/message';
+import { checkResults } from '@/server-modules/zabbix-report/checks';
 
 
 
@@ -17,12 +17,12 @@ function readJsonFile(filePath: any) {
 
 export async function getReportZabbix(attempt = 0 , test = false): Promise<{simpleResult: string, detailedResult: string}>{
     
-    let file = path.join(process.cwd(), 'data/zabbix_list_devices.json');
+    let listDevices = path.join(process.cwd(), 'data/zabbix_list_devices.json');
     if (test) {
-        file = path.join(process.cwd(), 'data/test-zabbix_list_devices.json');
+        listDevices = path.join(process.cwd(), 'data/test-zabbix_list_devices.json');
     }
     
-    const providers = readJsonFile(file);
+    const providers = readJsonFile(listDevices);
 
     const MAX_ATTEMPTS = 3;
     
@@ -50,9 +50,17 @@ export async function getReportZabbix(attempt = 0 , test = false): Promise<{simp
     }
     closeBrowser();
     const { summarizedData, detailedData, uniqueTypes } = summarizeMbpsAndExtractTypes(results);
+    fetchCheckValues();
     const simpleResult = (simplified_report(summarizedData, uniqueTypes, startTime));
     const detailedResult = (detailed_report(detailedData, uniqueTypes, startTime));
     
+    
+    const checked = checkResults(simpleResult, toCheckValues);  
+
+    if (checked){
+        await new Promise(resolve => setTimeout(resolve, 18000));
+        return getReportZabbix(attempt + 1);
+    }
     return {simpleResult, detailedResult}
         
 }   

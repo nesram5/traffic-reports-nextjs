@@ -2,7 +2,7 @@ import '@/envConfig';
 import puppeteer  from 'puppeteer-core';
 import path from 'path';
 import * as os from 'os';
-import { saveToLog } from '@/modules/logger/log';
+import { saveToLog } from '@/server-modules/logger/log';
 
 let browser: any;
 let page: any;
