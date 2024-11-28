@@ -1,12 +1,14 @@
 { 
 "val1": { 
-        "main": "*Guacara - Netcom Plus ( 20 Gbps):*",
-        "secondary": "*Guacara (OLT-1-2-3-4-5-6):*",
+        "main": "Guacara - Netcom Plus ( 20 Gbps)",
+        "secondary": "Guacara (OLT-1-2-3-4-5-6)",
+        "sum": false,
         "percentage": 0.04
     },
 "val2": { 
-        "main": "*Mirador - Netcom Plus (20 Gbps):*",
-        "secondary": "*Mirador(OLT-1-2):*",
-        "percentage": 0.04
+        "main": "Mirador - Netcom Plus (20 Gbps)",
+        "secondary": ["Mirador(OLT-1-2)", "Mango Shopping(OLT-1-2)"],
+        "sum": true,
+        "percentage": 0.09
     }
 }

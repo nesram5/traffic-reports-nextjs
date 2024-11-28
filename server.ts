@@ -14,7 +14,7 @@ const httpPort: number = 80;
 const address: string = process.env.SERVER || 'localhost';
 
 const dev = process.env.NODE_ENV !== 'production';
-const app = next({dev });
+const app = next({ });
 const handle = app.getRequestHandler();
 const options = {
   key: fs.readFileSync(path.join(__dirname, 'key.pem')),

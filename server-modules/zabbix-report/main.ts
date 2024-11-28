@@ -6,7 +6,7 @@ import {gatherMainData, getDownloadValue, getCurrentTimestamp,closeBrowser, rest
 import { summarizeMbpsAndExtractTypes } from '@/server-modules/zabbix-report/process';
 import { simplified_report, getCurrentTimeInUTCMinus4, detailed_report} from '@/server-modules/zabbix-report/message';
 import { checkResults } from '@/server-modules/zabbix-report/checks';
-
+import { ICheckValues } from '@/lib/types';
 
 
 function readJsonFile(filePath: any) {
@@ -37,9 +37,9 @@ export async function getReportZabbix(attempt = 0 , test = false): Promise<{simp
         const targetTime = new Date(currentTimestamp).getTime();
         const mbpsValue = getDownloadValue(mainData, targetTime); 
         if (mbpsValue === null && attempt < MAX_ATTEMPTS) {
-            saveToLog(`Cannot connect to ${provider.link} value is NULL at ${startTime}\n` )
-            await new Promise(resolve => setTimeout(resolve, 15000));
+            saveToLog(`Cannot connect to ${provider.link} value is NULL at ${startTime}\n`);
             closeBrowser();
+            await new Promise(resolve => setTimeout(resolve, 15000));            
             return getReportZabbix(attempt + 1);
         }
 
@@ -50,16 +50,24 @@ export async function getReportZabbix(attempt = 0 , test = false): Promise<{simp
     }
     closeBrowser();
     const { summarizedData, detailedData, uniqueTypes } = summarizeMbpsAndExtractTypes(results);
-    fetchCheckValues();
-    const simpleResult = (simplified_report(summarizedData, uniqueTypes, startTime));
-    const detailedResult = (detailed_report(detailedData, uniqueTypes, startTime));
+    const toCheckValues: ICheckValues = readJsonFile(path.join(process.cwd(), 'data/to_check_values.json'));  
+    const checked = checkResults(summarizedData, uniqueTypes, toCheckValues);
+    let simpleResult = (simplified_report(summarizedData, uniqueTypes, startTime));
+    const detailedResult = (detailed_report(detailedData, uniqueTypes, startTime)); 
     
-    
-    const checked = checkResults(simpleResult, toCheckValues);  
-
     if (checked){
-        await new Promise(resolve => setTimeout(resolve, 18000));
+        closeBrowser();
+        await new Promise(resolve => setTimeout(resolve, 30000));
+        saveToLog(`Se encontro un error en los valores del reporte`);
+        
         return getReportZabbix(attempt + 1);
+    }
+
+    if(attempt === 3){
+        for (const key in toCheckValues){            
+            simpleResult += `\n *Se encontraron errores en ${toCheckValues[key].main}*`;
+        }
+        return {simpleResult, detailedResult}
     }
     return {simpleResult, detailedResult}
         

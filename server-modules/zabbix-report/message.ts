@@ -1,11 +1,8 @@
-import { getCheckValues, updateCheckValues } from "./checks";
 
 export function simplified_report(summarizedData: any, trafficReportTypes: any, startTime: any) {
     
     let resultText = `------ _Estado actual del tráfico_ -------\n`;
     let footer = `\n-------- _Estadísticas a la hora ${startTime}_ ---------\n`;
-    const toCheckValues = getCheckValues();
-    let toCheckValuesUpdated: { [key: string]: { main: number, secondary: number, percentage: number } } = {};
     for (const type of trafficReportTypes) {
         let typeText = `\n*${type}:*\n\n`;
         let totalType = 0;
@@ -13,15 +10,7 @@ export function simplified_report(summarizedData: any, trafficReportTypes: any, 
         if (summarizedData[type]) {
             for (const group in summarizedData[type]) {
                 const { group: groupName, mbps } = summarizedData[type][group];
-                let mbpsValue = Math.abs(Math.round(mbps)); 
-                for (const key in toCheckValues){
-                    if (groupName === toCheckValues.key.main){
-                        toCheckValuesUpdated[key] = {
-                            main: Number(mbpsValue),
-                            secondary: 0,
-                            percentage: toCheckValues.key.percentage
-                    }
-                }
+                let mbpsValue = Math.abs(Math.round(mbps));                 
                 typeText += `📌 *${groupName}:*  \`\`\`${formatNumberWithDot(mbpsValue)} Mbps\`\`\`\n`;
                 totalType += mbpsValue; 
             }
