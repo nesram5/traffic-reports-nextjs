@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import DefaultLayout from "@/layouts/default";
-import { DropDownList } from '@/components/drop-down-list/main';
-import { NewDropDown } from '@/components/new-drop-down/main';
 import TimeContentViewer from '@/components/time-content-viewer';
 import { ModalGetReport } from '@/components/modal-get-report';
 
