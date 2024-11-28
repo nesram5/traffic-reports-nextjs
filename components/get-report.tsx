@@ -83,7 +83,7 @@ export const GetReport: React.FC<{ test?: boolean }> = ({ test = false }) => {
 
     return (
         <div className="mt-5 p-4">
-          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+          <div className="flex place-items-start gap-4 px-12">
                 {/* Display the results in CodeBlock components */}
                 <CodeBlock code={simpleResult} />
                 <CodeBlock code={detailedResult} />
