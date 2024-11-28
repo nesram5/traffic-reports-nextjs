@@ -56,19 +56,19 @@ export async function getReportZabbix(attempt = 0 , test = false): Promise<{simp
     const detailedResult = (detailed_report(detailedData, uniqueTypes, startTime)); 
     
     if (checked){
+        if(attempt === 3){
+            for (const key in toCheckValues){            
+                simpleResult += `\n *Se encontraron errores en ${toCheckValues[key].main}*`;
+            }
+            return {simpleResult, detailedResult}
+        }
         closeBrowser();
         await new Promise(resolve => setTimeout(resolve, 30000));
         saveToLog(`Se encontro un error en los valores del reporte`);
         
         return getReportZabbix(attempt + 1);
     }
-
-    if(attempt === 3){
-        for (const key in toCheckValues){            
-            simpleResult += `\n *Se encontraron errores en ${toCheckValues[key].main}*`;
-        }
-        return {simpleResult, detailedResult}
-    }
+        
     return {simpleResult, detailedResult}
         
 }   
