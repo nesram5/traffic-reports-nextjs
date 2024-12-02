@@ -3,13 +3,24 @@ import puppeteer  from 'puppeteer-core';
 import path from 'path';
 import * as os from 'os';
 import { saveToLog } from '@/server-modules/logger/log';
-
+import { exec } from "child_process";
 let browser: any;
 let page: any;
 
 export function restoreToinit(){
     browser = '';
     page = '';
+    exec("killall chromium", (error, stdout, stderr) => {
+        if (error) {
+            console.log(`error: ${error.message}`);
+            return;
+        }
+        if (stderr) {
+            console.log(`stderr: ${stderr}`);
+            return;
+        }
+        console.log(`stdout: ${stdout}`);
+    });
 }
 
 async function login() {
