@@ -10,7 +10,15 @@
 	},
 	"dependencies": {
 		"@next/env": "^15.0.2",
+		"@nextui-org/button": "^2.2.9",
+		"@nextui-org/input": "^2.4.8",
+		"@nextui-org/kbd": "^2.2.6",
+		"@nextui-org/link": "^2.2.7",
+		"@nextui-org/navbar": "^2.2.8",
 		"@nextui-org/react": "^2.4.8",
+		"@nextui-org/switch": "^2.2.8",
+		"@nextui-org/system": "^2.4.6",
+		"@nextui-org/theme": "^2.4.5",
 		"@react-aria/visually-hidden": "3.8.12",
 		"@types/ws": "^8.5.13",
 		"ace-builds": "^1.36.3",
@@ -31,7 +39,7 @@
 		"snmp-native": "^1.2.0"
 	},
 	"devDependencies": {
-		"@types/node": "20.5.7",
+		"@types/node": "^20.5.7",
 		"@types/node-cron": "^3.0.3",
 		"@types/node-schedule": "^2.1.1",
 		"@types/puppeteer": "^5.4.7",

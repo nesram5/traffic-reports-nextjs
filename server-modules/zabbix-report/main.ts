@@ -5,8 +5,8 @@ import { submitToDB } from '@/server-modules/handlerDB/submit';
 import {gatherMainData, getDownloadValue, getCurrentTimestamp,closeBrowser, restoreToinit } from '@/server-modules/zabbix-report/get';
 import { summarizeMbpsAndExtractTypes } from '@/server-modules/zabbix-report/process';
 import { simplified_report, getCurrentTimeInUTCMinus4, detailed_report} from '@/server-modules/zabbix-report/message';
-import { checkResults } from '@/server-modules/zabbix-report/checks';
-import { ICheckValues } from '@/lib/types';
+//import { checkResults } from '@/server-modules/zabbix-report/checks';
+//import { ICheckValues } from '@/lib/types';
 
 
 function readJsonFile(filePath: any) {
@@ -50,11 +50,11 @@ export async function getReportZabbix(attempt = 0 , test = false): Promise<{simp
     }
     closeBrowser();
     const { summarizedData, detailedData, uniqueTypes } = summarizeMbpsAndExtractTypes(results);
-    const toCheckValues: ICheckValues = readJsonFile(path.join(process.cwd(), 'data/to_check_values.json'));  
-    const checked = checkResults(summarizedData, uniqueTypes, toCheckValues);
+   //const toCheckValues: ICheckValues = readJsonFile(path.join(process.cwd(), 'data/to_check_values.json'));  
+   // const checked = checkResults(summarizedData, uniqueTypes, toCheckValues);
     let simpleResult = (simplified_report(summarizedData, uniqueTypes, startTime));
     const detailedResult = (detailed_report(detailedData, uniqueTypes, startTime)); 
-    
+    /*
     if (checked){
         if(attempt === 3){
             for (const key in toCheckValues){            
@@ -68,7 +68,7 @@ export async function getReportZabbix(attempt = 0 , test = false): Promise<{simp
         
         return getReportZabbix(attempt + 1);
     }
-        
+    */   
     return {simpleResult, detailedResult}
         
 }   

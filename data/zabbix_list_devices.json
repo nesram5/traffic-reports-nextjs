@@ -1,15 +1,15 @@
 {
   "Prov-Fibex": {
-    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=481902&action=showvalues&plaintext=As+plain+text",
+    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=584010&action=showvalues&plaintext=As+plain+text",
     "name": "Fibex (40 Gbps)",
     "type": "Proveedores",
     "group": "Fibex (40 Gbps)"
   },
   "Prov-Globenet": {
     "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=481188&action=showvalues&plaintext=As+plain+text",
-    "name": "Cogent (50 Gbps)",
+    "name": "Cogent (70 Gbps)",
     "type": "Proveedores",
-    "group": "Cogent (50 Gbps)"
+    "group": "Cogent (70 Gbps)"
   },
   "TD-Fibex-Val": {
     "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=584032&action=showvalues&plaintext=As+plain+text",
@@ -18,7 +18,7 @@
     "group": "Fibex-Valencia (50 Gbps)"
   },
   "TD-Fibex-Maracay": {
-    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=500358&action=showvalues&plaintext=As+plain+text",
+    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=584033&action=showvalues&plaintext=As+plain+text",
     "name": "Fibex-Caribe (4 Gbps)",
     "type": "Transportes",
     "group": "Fibex-Caribe (4 Gbps)"
@@ -43,12 +43,12 @@
   },
   "TD-NetUno-Val": {
     "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=518556&action=showvalues&plaintext=As+plain+text",
-    "name": "Dayco - NetUno (18 Gbps)",
+    "name": "Dayco - NetUno (23 Gbps)",
     "type": "Transportes",
-    "group": "Dayco - NetUno (18 Gbps)"
+    "group": "Dayco - NetUno (23 Gbps)"
   },
   "TD-NetUno-Mcy": {
-    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=500359&action=showvalues&plaintext=As+plain+text",
+    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=519107&action=showvalues&plaintext=As+plain+text",
     "name": "Caribe - NetUno (8 Gbps)",
     "type": "Transportes",
     "group": "Caribe - NetUno (8 Gbps)"
@@ -71,8 +71,8 @@
     "type": "Transportes",
     "group": "Valencia - Digitel (1 Gbps)"
   },
-  "TD-Dayco-GUA": {
-    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=584799&action=showvalues&plaintext=As+plain+text",
+  "TD-Dayco-GUA2": {
+    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=619503&action=showvalues&plaintext=As+plain+text",
     "name": "Guacara - Netcom Plus ( 20 Gbps)",
     "type": "Transportes",
     "group": "Guacara - Netcom Plus ( 20 Gbps)"
@@ -151,9 +151,9 @@
   },
   "FTTH-GUA-BNG-02": {
     "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521341&action=showvalues&plaintext=As+plain+text",
-    "name": "Guacara (OLT-1-2-3-4-5) BNG-02",
+    "name": "Guacara (OLT ZTE 1-2-3-4-5-6) BNG-02",
     "type": "FTTH",
-    "group": "Guacara (OLT-1-2-3-4-5-6)"
+    "group": "Guacara (OLT ZTE 1-2-3-4-5-6)"
   },
   "FTTH-GYS-NET-BNG-02": {
     "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521364&action=showvalues&plaintext=As+plain+text",
@@ -168,7 +168,7 @@
     "group": "Paraparal (OLT-3-4-5-6-7-8-9)"
   },
   "FTTH-IL-01": {
-    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=423112&action=showvalues&plaintext=As+plain+text",
+    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=629176&action=showvalues&plaintext=As+plain+text",
     "name": "Isla Larga",
     "type": "FTTH",
     "group": "Isla Larga"

@@ -1,6 +1,6 @@
 import { saveToLog } from "../logger/log";
 import { ICheckValues, ICheckedValues } from '@/lib/types';
-
+/*
 export function checkResults(summarizedData: any, uniqueTypes: any, toCheckValues: ICheckValues): boolean {
     
     let totalToCheck: { [name: string] : {value: number} } = {};
@@ -16,12 +16,12 @@ export function checkResults(summarizedData: any, uniqueTypes: any, toCheckValue
         };
     }
     const toEvaluation = extractValuesFromResult(totalToCheck, toCheckValues);
-    const results = checkValues(toEvaluation);
+    /const results = checkValues(toEvaluation);
     for (const value of results) {
         if (value) {
             return true;
         }
-    }
+   
     return false;
 }
 
@@ -94,3 +94,4 @@ function extractValuesFromResult
     return result;
     
 }
+*/
