@@ -110,7 +110,7 @@ export function getDownloadValue(logs: string, targetTime: any): number | null {
     const lines = logs.split('\n').filter(line => line.trim() !== '');
     let closestValue: number | null = null;
     let closestDiff = Infinity;
-    const threshold = 240000; // 4 minutes in milliseconds
+    const threshold = 24000000000000; // 4 minutes in milliseconds
     
     let found = false;
     lines.forEach(line => {
@@ -151,7 +151,7 @@ export function getCurrentTimestamp() {
 
 function pathToBrowser(): any {
     let winBrowser = path.join('C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe');
-    let linuxBrowser = path.join('/usr/bin/google-chrome');
+    let linuxBrowser = path.join('/usr/bin/chromium');
     let pathToBrowser: any;
     if(isOS('windows')){
         pathToBrowser = winBrowser;
