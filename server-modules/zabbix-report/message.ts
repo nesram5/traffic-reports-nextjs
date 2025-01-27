@@ -1,23 +1,25 @@
 
 export function simplified_report(summarizedData: any, trafficReportTypes: any, startTime: any) {
     
-    let resultText = `------ _Estado actual del tráfico_ -------\n`;
-    let footer = `\n-------- _Estadísticas a la hora ${startTime}_ ---------\n`;
+    let resultText = `------🌐 _Estado actual del tráfico_ 🌐 -------\n`;
+    let footer = `\n-------- *Estadísticas a la hora ${startTime}* ---------\n`;
     for (const type of trafficReportTypes) {
-        let typeText = `\n*${type}:*\n\n`;
+        let typeText = `\n*${type}:*\n\n ---------------------------------------\n`;
+        
         let totalType = 0;
 
         if (summarizedData[type]) {
             for (const group in summarizedData[type]) {
                 const { group: groupName, mbps } = summarizedData[type][group];
                 let mbpsValue = Math.abs(Math.round(mbps));                 
-                typeText += `📌 *${groupName}:*  \`\`\`${formatNumberWithDot(mbpsValue)} Mbps\`\`\`\n`;
+                typeText += `▪️ *${groupName}:*  \`\`\`${formatNumberWithDot(mbpsValue)} Mbps\`\`\`\n`;
                 totalType += mbpsValue; 
             }
         }
 
         if (type === "Proveedores"){
-            typeText += `📌 *Total ${type}:*  \`\`\`${formatNumberWithDot(Math.round(totalType))} Mbps\`\`\`\n`;
+            typeText += `▪️ *Total ${type}:*  \`\`\`${formatNumberWithDot(Math.round(totalType))} Mbps\`\`\`\n`;
+            typeText += `---------------------------------------\n`;
         }
 
         resultText += typeText;
@@ -28,11 +30,11 @@ export function simplified_report(summarizedData: any, trafficReportTypes: any, 
 
 export function detailed_report(detailedData: any, trafficReportTypes: any, startTime: any) {
 
-    let resultText = `------ _Reporte Detallado_ -------\n`;
-    let footer = `\n-------- _Estadísticas a la hora ${startTime}_ ---------\n`;
+    let resultText = `------ 🌐 _Reporte Detallado_ 🌐 -------\n`;
+    let footer = `\n-------- *Estadísticas a la hora ${startTime}* ---------\n`;
 
     for (const type of trafficReportTypes) {
-        let typeText = `\n*${type}:*\n\n`;
+        let typeText = `\n*${type}:*\n\n ---------------------------------------\n`;
         let totalType = 0;
 
         if (detailedData[type]) {
@@ -40,13 +42,14 @@ export function detailed_report(detailedData: any, trafficReportTypes: any, star
                 const { name: deviceName, mbps } = detailedData[type][name];
                 let mbpsValue = Math.abs(Math.round(mbps)); 
 
-                typeText += `📌 *${deviceName}:*  \`\`\`${formatNumberWithDot(mbpsValue)} Mbps\`\`\`\n`;
+                typeText += `▪️ *${deviceName}:*  \`\`\`${formatNumberWithDot(mbpsValue)} Mbps\`\`\`\n`;
                 totalType += mbpsValue; 
             }
         }
 
         if (type === "Proveedores" || type === "FTTH"){
-            typeText += `📌 *Total ${type}:*  \`\`\`${formatNumberWithDot(Math.round(totalType))} Mbps\`\`\`\n`;
+            typeText += `▪️ *Total ${type}:*  \`\`\`${formatNumberWithDot(Math.round(totalType))} Mbps\`\`\`\n`;
+            typeText += `---------------------------------------\n`;
         }
 
         resultText += typeText;
