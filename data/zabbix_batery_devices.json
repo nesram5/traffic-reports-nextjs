@@ -9,7 +9,7 @@
       "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438024&action=showvalues&plaintext=As+plain+text",
       "name": "Copey Arriba",
       "type": "Baterias",
-      "group": "Copey"
+      "group": "Copey Arriba"
     },
     "torre-movilnet": {
         "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=505836&action=showvalues&plaintext=As+plain+text",
