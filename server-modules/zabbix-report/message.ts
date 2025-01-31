@@ -70,7 +70,7 @@ export function battery_report(summarizedData: any, ReportTypes: any, startTime:
             for (const group in summarizedData[type]) {
                 const { group: groupName, voltage } = summarizedData[type][group];
                 let voltageValue = Math.abs(voltage);  
-                if (voltageValue  <= 12.0 ){
+                if (voltageValue  <= 12.7 ){
                     typeText += `▪️ *${groupName}:*  \`\`\`${voltageValue} V. ⚠️ \`\`\`\n`;
                 }
                 else {
