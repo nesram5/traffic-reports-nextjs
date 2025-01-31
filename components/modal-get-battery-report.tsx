@@ -1,18 +1,18 @@
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
-import {GetReport} from "@/components/get-report";
+import { GetBatteryReport } from "@/components/get-battery-report";
 
-export const ModalGetReport: React.FC<{ children: string}> = ({ children}) => {
+export const ModalGetBatteryReport: React.FC<{ children: string}> = ({ children}) => {
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
   
   return (
     <>
-    <div className="p-2 w-50">
+    <div className="p-2">
       <Button color="secondary" onPress={onOpen}>{children}</Button>
       <Modal className="overflow-y-scroll max-h-screen" size="5xl" isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
-          <ModalHeader >{'Reporte de tráfico hora actual'}</ModalHeader>
+          <ModalHeader >{'Reporte de baterias hora actual'}</ModalHeader>
           <ModalBody>
-            <GetReport/>
+            <GetBatteryReport/>
           </ModalBody>
           <ModalFooter>
             <Button color="danger" variant="light" onPress={onOpenChange}>
@@ -21,7 +21,7 @@ export const ModalGetReport: React.FC<{ children: string}> = ({ children}) => {
           </ModalFooter>
         </ModalContent>
       </Modal>
-      </div>
+    </div>
     </>
   );
 };

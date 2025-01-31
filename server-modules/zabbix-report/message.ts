@@ -1,4 +1,3 @@
-
 export function simplified_report(summarizedData: any, trafficReportTypes: any, startTime: any) {
     
     let resultText = `------🌐 _Estado actual del tráfico_ 🌐 -------\n`;
@@ -57,6 +56,30 @@ export function detailed_report(detailedData: any, trafficReportTypes: any, star
 
     return `${resultText}${footer}`;
 }
+
+export function battery_report(summarizedData: any, ReportTypes: any, startTime: any) {
+    
+    let resultText = `Se adjunta la data actualizada del Banco de Baterías:\n`;
+    let footer = `\n-------- *Estadísticas a la hora ${startTime}* ---------\n`;
+    for (const type of ReportTypes) {
+        let typeText = `\n`;
+        
+        let totalType = 0;
+
+        if (summarizedData[type]) {
+            for (const group in summarizedData[type]) {
+                const { group: groupName, voltage } = summarizedData[type][group];
+                let voltageValue = Math.abs(voltage);                 
+                typeText += `▪️ *${groupName}:*  \`\`\`${voltageValue} V.\`\`\`\n`;
+                totalType += voltageValue; 
+            }
+        }
+        resultText += typeText;
+    }
+
+    return `${resultText}${footer}`;
+}
+
 export function getCurrentTimeInUTCMinus4() {
     const now = new Date();
 

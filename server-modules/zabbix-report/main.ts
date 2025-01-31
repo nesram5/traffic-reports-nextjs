@@ -2,9 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import { saveToLog } from '@/server-modules/logger/log';
 import { submitToDB } from '@/server-modules/handlerDB/submit';
-import {gatherMainData, getDownloadValue, getCurrentTimestamp,closeBrowser, restoreToinit } from '@/server-modules/zabbix-report/get';
-import { summarizeMbpsAndExtractTypes } from '@/server-modules/zabbix-report/process';
-import { simplified_report, getCurrentTimeInUTCMinus4, detailed_report} from '@/server-modules/zabbix-report/message';
+import {gatherMainData, getDownloadValue, getCurrentTimestamp,closeBrowser, restoreToinit, getVoltageValue } from '@/server-modules/zabbix-report/get';
+import { summarizeMbpsAndExtractTypes, summarizeVoltage } from '@/server-modules/zabbix-report/process';
+import { simplified_report, getCurrentTimeInUTCMinus4, detailed_report, battery_report} from '@/server-modules/zabbix-report/message';
 //import { checkResults } from '@/server-modules/zabbix-report/checks';
 //import { ICheckValues } from '@/lib/types';
 
@@ -21,7 +21,7 @@ export async function getReportZabbix(attempt = 0 , test = false): Promise<{simp
     if (test) {
         listDevices = path.join(process.cwd(), 'data/test-zabbix_list_devices.json');
     }
-    
+  
     const providers = readJsonFile(listDevices);
 
     const MAX_ATTEMPTS = 3;
@@ -73,11 +73,50 @@ export async function getReportZabbix(attempt = 0 , test = false): Promise<{simp
         
 }   
 
+export async function getBatteryReportZabbix(attempt = 0 , test = false): Promise<{batteryResult: string}>{
+   
+    let bateryDevice = path.join(process.cwd(), 'data/zabbix_batery_devices.json');
+    
+    const bateryDevices = readJsonFile(bateryDevice); 
+
+    const MAX_ATTEMPTS = 3;
+    
+    const currentTimestamp = getCurrentTimestamp();
+    const startTime = getCurrentTimeInUTCMinus4()
+    const results: any = {}; 
+
+
+    for (const key in bateryDevices) {
+        const battery = bateryDevices[key];
+        const mainData = await gatherMainData(battery.link);         
+        const targetTime = new Date(currentTimestamp).getTime();
+        const voltageValue = getVoltageValue(mainData, targetTime); 
+        if (voltageValue === null && attempt < MAX_ATTEMPTS) {
+            saveToLog(`Cannot connect to ${battery.link} value is NULL at ${startTime}\n`);
+            closeBrowser();
+            await new Promise(resolve => setTimeout(resolve, 15000));            
+            return getBatteryReportZabbix(attempt + 1);
+        }
+
+        results[key] = {
+            ...battery,
+            voltage: voltageValue 
+        };
+    }
+    closeBrowser();
+    const { summarizedData, uniqueTypes } = summarizeVoltage(results);
+    let batteryResult = (battery_report(summarizedData, uniqueTypes, startTime));
+    
+    return {batteryResult }
+        
+}  
+
 
 export async function autoGetReportZabbix() {
 
     let {simpleResult: simpleResult, detailedResult: detailedResult} = await getReportZabbix();
-    submitToDB(simpleResult, detailedResult);
+    let {batteryResult: batteryResult} = await getBatteryReportZabbix();
+    submitToDB(simpleResult, batteryResult);
     restoreToinit();
 }
 

@@ -42,3 +42,33 @@ export function summarizeMbpsAndExtractTypes(data: any) {
 
     return { summarizedData, detailedData, uniqueTypes };
 }
+export function summarizeVoltage(data: any) {
+
+    const summarizedData: any = {};
+    const uniqueTypesSet: any = new Set();
+
+    for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+            const { type, group, voltage, name } = data[key]; 
+
+            if (!summarizedData[type]) {
+                summarizedData[type] = {};
+            }
+
+            if (!summarizedData[type][group]) {
+                summarizedData[type][group] = {
+                    group: group,
+                    voltage: 0
+                };
+            }
+
+            summarizedData[type][group].voltage += voltage;
+
+            uniqueTypesSet.add(type);
+        }
+    }
+
+    const uniqueTypes = Array.from(uniqueTypesSet);
+
+    return { summarizedData, uniqueTypes };
+}

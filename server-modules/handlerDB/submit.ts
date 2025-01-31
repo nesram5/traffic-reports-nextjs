@@ -18,14 +18,14 @@ async function pushCompiledReport(newTrafficRecord: {}) {
 }
 
 
-export  async function submitToDB(simpleResult: string, detailedResult: string) {
+export  async function submitToDB(simpleResult: string, batteryResult: string) {
     
     const date = new Date();
     
     const dataToInsert = {
         timestamp: date, 
         simpleReport: simpleResult,
-        detaildReport: detailedResult
+        detaildReport: batteryResult
 
     }
     await pushCompiledReport(dataToInsert);  

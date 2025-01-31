@@ -77,11 +77,17 @@
     "type": "Transportes",
     "group": "Mirador - Netcom Plus (20 Gbps)"
   },
-  "BNG-02": {
+  "DCO-BNG": {
     "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=637837&action=showvalues&plaintext=As+plain+text",
-    "name": "BNG 2",
+    "name": "DCO BNG",
     "type": "BNG",
-    "group": "BNG 2"
+    "group": "DCO BNG"
+  },
+  "GNM-BNG": {
+    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=509211&action=showvalues&plaintext=As+plain+text",
+    "name": "GNM BNG",
+    "type": "BNG",
+    "group": "GNM BNG"
   },
   "FTTH-LP-NET-BNG02": {
     "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=521343&action=showvalues&plaintext=As+plain+text",
@@ -167,8 +173,8 @@
     "type": "FTTH",
     "group": "Torre Ejecutiva (OLT-1-2-3-4)"
   },
-  "FTTH-LSP-01-03": {
-    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=505310&action=showvalues&plaintext=As+plain+text",
+  "FTTH-SOR": {
+    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=662758&action=showvalues&plaintext=As+plain+text",
     "name": "La Sorpresa(OLT-1-2-3)",
     "type": "FTTH",
     "group": "La Sorpresa (OLT-1-2-3)"

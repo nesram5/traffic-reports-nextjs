@@ -1,0 +1,200 @@
+{
+    "copey": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438019&action=showvalues&plaintext=As+plain+text",
+      "name": "Copey",
+      "type": "Baterias",
+      "group": "Copey"
+    },
+    "copey-arriba": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438024&action=showvalues&plaintext=As+plain+text",
+      "name": "Copey Arriba",
+      "type": "Baterias",
+      "group": "Copey"
+    },
+    "torre-movilnet": {
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=505836&action=showvalues&plaintext=As+plain+text",
+        "name": "Torre Movilnet",
+        "type": "Baterias",
+        "group": "Torre Movilnet"
+      },
+    "la-castellana": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438029&action=showvalues&plaintext=As+plain+text",
+      "name": "La Castellana",
+      "type": "Baterias",
+      "group": "La Castellana"
+    },
+    "san-andres": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438034&action=showvalues&plaintext=As+plain+text",
+      "name": "San Andres",
+      "type": "Baterias",
+      "group": "San Andres"
+    },
+    "shangri-la": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438039&action=showvalues&plaintext=As+plain+text",
+      "name": "Shangri LA",
+      "type": "Baterias",
+      "group": "Shangri LA"
+    },
+    "paseo-las-industrias": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438044&action=showvalues&plaintext=As+plain+text",
+      "name": "Paseo Las Industrias",
+      "type": "Baterias",
+      "group": "Paseo Las Industrias"
+    },
+    "flor-amarillo": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438049&action=showvalues&plaintext=As+plain+text",
+      "name": "Flor Amarillo",
+      "type": "Baterias",
+      "group": "Flor Amarillo"
+    },
+    "los-parques": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438054&action=showvalues&plaintext=As+plain+text",
+      "name": "Los Parques",
+      "type": "Baterias",
+      "group": "Los Parques"
+    },
+    "fundacion-mendoza": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438059&action=showvalues&plaintext=As+plain+text",
+      "name": "Fundacion Mendoza",
+      "type": "Baterias",
+      "group": "Fundacion Mendoza"
+    },
+    "castillito": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438064&action=showvalues&plaintext=As+plain+text",
+      "name": "Castillito",
+      "type": "Baterias",
+      "group": "Castillito"
+    },
+    "esmeralda": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438069&action=showvalues&plaintext=As+plain+text",
+      "name": "Esmeralda",
+      "type": "Baterias",
+      "group": "Esmeralda"
+    },
+    "mango-shopping": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438074&action=showvalues&plaintext=As+plain+text",
+      "name": "Mango Shopping",
+      "type": "Baterias",
+      "group": "Mango Shopping"
+    },
+    "mirador": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438079&action=showvalues&plaintext=As+plain+text",
+      "name": "Mirador",
+      "type": "Baterias",
+      "group": "Mirador"
+    },
+    "colina": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438084&action=showvalues&plaintext=As+plain+text",
+      "name": "Colina",
+      "type": "Baterias",
+      "group": "Colina"
+    },
+    "guacara-cc-guacara": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438094&action=showvalues&plaintext=As+plain+text",
+      "name": "Guacara CC Guacara",
+      "type": "Baterias",
+      "group": "Guacara CC Guacara"
+    },
+    "guacara-edif-florida": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438089&action=showvalues&plaintext=As+plain+text",
+      "name": "Guacara Edif. Florida",
+      "type": "Baterias",
+      "group": "Guacara Edif. Florida"
+    },
+    "los-guayos": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438099&action=showvalues&plaintext=As+plain+text",
+      "name": "Los Guayos",
+      "type": "Baterias",
+      "group": "Los Guayos"
+    },
+    "san-joaquin": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=474702&action=showvalues&plaintext=As+plain+text",
+      "name": "San Joaquin",
+      "type": "Baterias",
+      "group": "San Joaquin"
+    },
+    "tocuyito": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=490047&action=showvalues&plaintext=As+plain+text",
+      "name": "Tocuyito",
+      "type": "Baterias",
+      "group": "Tocuyito"
+    },
+    "isla-larga": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438104&action=showvalues&plaintext=As+plain+text",
+      "name": "Isla Larga",
+      "type": "Baterias",
+      "group": "Isla Larga"
+    },
+    "torre-ejecutiva": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438109&action=showvalues&plaintext=As+plain+text",
+      "name": "Torre Ejecutiva",
+      "type": "Baterias",
+      "group": "Torre Ejecutiva"
+    },
+    "rancho-grande": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438114&action=showvalues&plaintext=As+plain+text",
+      "name": "Rancho Grande",
+      "type": "Baterias",
+      "group": "Rancho Grande"
+    },
+    "vistamar": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438137&action=showvalues&plaintext=As+plain+text",
+      "name": "Vistamar",
+      "type": "Baterias",
+      "group": "Vistamar"
+    },
+    "la-sorpresa": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438142&action=showvalues&plaintext=As+plain+text",
+      "name": "La Sorpresa",
+      "type": "Baterias",
+      "group": "La Sorpresa"
+    },
+    "venaragua": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438147&action=showvalues&plaintext=As+plain+text",
+      "name": "Venaragua",
+      "type": "Baterias",
+      "group": "Venaragua"
+    },
+    "balbina": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438152&action=showvalues&plaintext=As+plain+text",
+      "name": "Balbina",
+      "type": "Baterias",
+      "group": "Balbina"
+    },
+    "ce-caribe": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438157&action=showvalues&plaintext=As+plain+text",
+      "name": "CE Caribe",
+      "type": "Baterias",
+      "group": "CE Caribe"
+    },
+    "el-limon": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438162&action=showvalues&plaintext=As+plain+text",
+      "name": "El Limon",
+      "type": "Baterias",
+      "group": "El Limon"
+    },
+    "bermudez": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438167&action=showvalues&plaintext=As+plain+text",
+      "name": "Bermudez",
+      "type": "Baterias",
+      "group": "Bermudez"
+    },
+    "vista-hermosa": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438172&action=showvalues&plaintext=As+plain+text",
+      "name": "Vista Hermosa",
+      "type": "Baterias",
+      "group": "Vista Hermosa"
+    },
+    "san-jacinto": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438177&action=showvalues&plaintext=As+plain+text",
+      "name": "San Jacinto",
+      "type": "Baterias",
+      "group": "San Jacinto"
+    },
+    "cagua": {
+      "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=438182&action=showvalues&plaintext=As+plain+text",
+      "name": "Cagua",
+      "type": "Baterias",
+      "group": "Cagua"
+    }
+}

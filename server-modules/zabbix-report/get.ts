@@ -83,7 +83,7 @@ export async function gatherMainData(pageLink: any): Promise<any> {
     } catch (error) {
         saveToLog(`Error opening link ${pageLink}: check the JSON file ${getCurrentTimestamp()}`);
         restoreToinit();
-        await new Promise(resolve => setTimeout(resolve, 15000));
+        //await new Promise(resolve => setTimeout(resolve, 15000));
         return gatherMainData(pageLink)
     }
 
@@ -134,6 +134,43 @@ export function getDownloadValue(logs: string, targetTime: any): number | null {
         return closestValue / 1e6; // Convert bytes to MBps and return
     } else {
         saveToLog(`No matching timestamp found within the threshold. ${closestDiff}`);
+        return null;
+    }
+}
+export function getVoltageValue(logs: string, targetTime: any): number | null {
+    if (typeof logs !== 'string') {
+        console.error('The logs parameter should be a string.');
+        return null; // Return null if logs is not a string
+    }
+
+    const lines = logs.split('\n').filter(line => line.trim() !== '');
+    let closestValue: number | null = null;
+    let closestDiff = Infinity;
+    const threshold = 24000000000000; // 4 minutes in milliseconds
+
+    let found = false;
+    lines.forEach(line => {
+        if (found) return; // Optimization: Exit loop once a value is found
+
+        const parts = line.split(' ');
+        if (parts.length < 4) return; // Skip lines that don't have enough data
+
+        const logTime = new Date(parts[0] + ' ' + parts[1]).getTime();
+        const voltageValue = parseFloat(parts[3]); // Parse voltage as float
+
+        const diff = Math.abs(logTime - targetTime);
+
+        if (diff < closestDiff && diff <= threshold) {
+            closestDiff = diff;
+            closestValue = voltageValue;
+            found = true; // Stop searching once a suitable value is found
+        }
+    });
+
+    if (closestValue !== null) {
+        return closestValue; // Return the voltage value directly (no conversion)
+    } else {
+        saveToLog(`No matching timestamp found within the threshold. Closest diff: ${closestDiff}`); // Include closestDiff for debugging
         return null;
     }
 }

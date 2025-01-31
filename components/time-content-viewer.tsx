@@ -173,7 +173,7 @@ export default function TimeContentViewer() {
   }
   return (    
     <main className="flex-1 p-6 flex flex-col items-center ">   
-    <h1 className="text-3xl font-bold mb-6">Reporte de tráfico correspondiente al</h1>
+    <h1 className="text-3xl font-bold mb-6">Reporte de tráfico y baterias correspondiente al</h1>
     <h2 className="text-2xl italic mb-6"> {day} de {month} del {year} a las {hour}</h2>
 
     <div className="max-w-6xl mx-auto p-4">

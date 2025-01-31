@@ -206,6 +206,15 @@
         "substract": "no",
         "prefered_interval": 15000
     },
+    "BNG-01": {
+        "oid": [[1,3,6,1,2,1,31,1,1,1,10,200010]],
+        "ip": "10.0.0.1",
+        "name": "BNG 1",
+        "type": "BNG",
+        "group": "BNG 1",
+        "substract": "no",
+        "prefered_interval": 15000
+    },
     "BNG-02": {
         "oid": [[1,3,6,1,2,1,31,1,1,1,10,200020]],
         "ip": "10.0.0.1",
@@ -215,12 +224,30 @@
         "substract": "no",
         "prefered_interval": 15000
     },
+    "FTTH-LP-NET-BNG01": {
+        "oid": [[1,3,6,1,2,1,31,1,1,1,10,19]],
+        "ip": "10.0.0.9",
+        "name": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3) BNG-01",
+        "type": "FTTH",
+        "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3)",
+        "substract": "no",
+        "prefered_interval": 30000
+    },
     "FTTH-LP-NET-BNG02": {
         "oid": [[1,3,6,1,2,1,31,1,1,1,10,19]],
         "ip": "10.0.0.17",
         "name": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3) BNG-02",
         "type": "FTTH",
         "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3)",
+        "substract": "no",
+        "prefered_interval": 30000
+    },
+    "FTTH-LP-NYC-BNG01": {
+        "oid": [[1,3,6,1,2,1,31,1,1,1,10,20]],
+        "ip": "10.0.0.9",
+        "name": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 13) BNG-01",
+        "type": "FTTH",
+        "group": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 13)",
         "substract": "no",
         "prefered_interval": 30000
     },
@@ -260,12 +287,30 @@
         "substract": "no",
         "prefered_interval": 15000
     },
+    "FTTH-SLA-BNG-1": {
+        "oid": [[1,3,6,1,2,1,31,1,1,1,10,23]],
+        "ip": "10.0.0.9",
+        "name": "Shangri LA(OLT-1-2-3) BNG-1",
+        "type": "FTTH",
+        "group": "Shangri LA(OLT-1-2-3)",
+        "substract": "no",
+        "prefered_interval": 30000
+    },
     "FTTH-SLA-BNG-2": {
         "oid": [[1,3,6,1,2,1,31,1,1,1,10,23]],
         "ip": "10.0.0.17",
         "name": "Shangri LA(OLT-1-2-3) BNG-2",
         "type": "FTTH",
         "group": "Shangri LA(OLT-1-2-3)",
+        "substract": "no",
+        "prefered_interval": 30000
+    },
+    "FTTH-FM-BNG-1": {
+        "oid": [[1,3,6,1,2,1,31,1,1,1,10,22]],
+        "ip": "10.0.0.9",
+        "name": "Fundacion Mendoza (OLT-1-2-3-4) BNG-1",
+        "type": "FTTH",
+        "group": "Fundacion Mendoza (OLT-1-2-3-4)",
         "substract": "no",
         "prefered_interval": 30000
     },
@@ -278,12 +323,30 @@
         "substract": "no",
         "prefered_interval": 30000
     },
+    "FTTH-MRD-BNG-1": {
+        "oid": [[1,3,6,1,2,1,31,1,1,1,10,9]],
+        "ip": "10.0.0.9",
+        "name": "Mirador(OLT-1-2) BNG-1",
+        "type": "FTTH",
+        "group": "Mirador(OLT-1-2)",
+        "substract": "no",
+        "prefered_interval": 30000
+    },
     "FTTH-MRD-BNG-2": {
         "oid": [[1,3,6,1,2,1,31,1,1,1,10,9]],
         "ip": "10.0.0.17",
         "name": "Mirador(OLT-1-2) BNG-2",
         "type": "FTTH",
         "group": "Mirador(OLT-1-2)",
+        "substract": "no",
+        "prefered_interval": 30000
+    },
+    "FTTH-MGS-BNG-1": {
+        "oid": [[1,3,6,1,2,1,31,1,1,1,10,38]],
+        "ip": "10.0.0.9",
+        "name": "Mango Shopping(OLT-1-2) BNG-1",
+        "type": "FTTH",
+        "group": "Mango Shopping(OLT-1-2)",
         "substract": "no",
         "prefered_interval": 30000
     },
@@ -296,6 +359,15 @@
         "substract": "no",
         "prefered_interval": 30000
     },
+    "FTTH-GUA-BNG-01": {
+        "oid": [[1,3,6,1,2,1,31,1,1,1,10,17]],
+        "ip": "10.0.0.9",
+        "name": "Guacara (OLT-1-2-3-4-5) BNG-01",
+        "type": "FTTH",
+        "group": "Guacara (OLT-1-2-3-4-5)",
+        "substract": "no",
+        "prefered_interval": 30000
+    },
     "FTTH-GUA-BNG-02": {
         "oid": [[1,3,6,1,2,1,31,1,1,1,10,17]],
         "ip": "10.0.0.17",
@@ -305,12 +377,30 @@
         "substract": "no",
         "prefered_interval": 30000
     },
+    "FTTH-GYS-NET-BNG-01": {
+        "oid": [[1,3,6,1,2,1,31,1,1,1,10,40]],
+        "ip": "10.0.0.9",
+        "name": "Los Guayos (OLT-1-2): BNG-01",
+        "type": "FTTH",
+        "group": "Los Guayos (OLT-1-2)",
+        "substract": "no",
+        "prefered_interval": 30000
+    },
     "FTTH-GYS-NET-BNG-02": {
         "oid": [[1,3,6,1,2,1,31,1,1,1,10,40]],
         "ip": "10.0.0.17",
         "name": "Los Guayos (OLT-1-2) BNG-02",
         "type": "FTTH",
         "group": "Los Guayos (OLT-1-2)",
+        "substract": "no",
+        "prefered_interval": 30000
+    },
+    "FTTH-GYS-NYC-BNG-01": {
+        "oid": [[1,3,6,1,2,1,31,1,1,1,10,39]],
+        "ip": "10.0.0.9",
+        "name": "Paraparal (OLT-3-4-5-6-7-8-9) BNG-01",
+        "type": "FTTH",
+        "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
         "substract": "no",
         "prefered_interval": 30000
     },
@@ -395,6 +485,15 @@
         "substract": "no",
         "prefered_interval": 15000
     },
+    "FTTH-SJQ-BNG-1": {
+        "oid": [[1,3,6,1,2,1,31,1,1,1,10,45]],
+        "ip": "10.0.0.9",
+        "name": "San Joaquín(OLT-1-2-3) BNG-1",
+        "type": "FTTH",
+        "group": "San Joaquín(OLT-1-2-3)",
+        "substract": "no",
+        "prefered_interval": 30000
+    },
     "FTTH-SJQ-BNG-2": {
         "oid": [[1,3,6,1,2,1,31,1,1,1,10,45]],
         "ip": "10.0.0.17",
@@ -404,12 +503,30 @@
         "substract": "no",
         "prefered_interval": 30000
     },
+    "FTTH-TM-BNG-1": {
+        "oid": [[1,3,6,1,2,1,31,1,1,1,10,42]],
+        "ip": "10.0.0.9",
+        "name": "Torre Movilnet (OLT-1-2) BNG-1",
+        "type": "FTTH",
+        "group": "Torre Movilnet (OLT-1-2)",
+        "substract": "no",
+        "prefered_interval": 30000
+    },
     "FTTH-TM-BNG-2": {
         "oid": [[1,3,6,1,2,1,31,1,1,1,10,42]],
         "ip": "10.0.0.17",
         "name": "Torre Movilnet (OLT-1-2) BNG-2",
         "type": "FTTH",
         "group": "Torre Movilnet (OLT-1-2)",
+        "substract": "no",
+        "prefered_interval": 30000
+    },
+    "FTTH-TCY-BNG-1": {
+        "oid": [[1,3,6,1,2,1,31,1,1,1,10,46]],
+        "ip": "10.0.0.9",
+        "name": "Tocuyito (OLT-1) BNG-1",
+        "type": "FTTH",
+        "group": "Tocuyito (OLT-1)",
         "substract": "no",
         "prefered_interval": 30000
     },
