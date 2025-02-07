@@ -58,28 +58,23 @@ export function detailed_report(detailedData: any, trafficReportTypes: any, star
 }
 
 export function battery_report(summarizedData: any, ReportTypes: any, startTime: any) {
-    
     let resultText = `Se adjunta la data actualizada del Banco de Baterías:\n`;
     let footer = `\n-------- *Estadísticas a la hora ${startTime}* ---------\n`;
+
     for (const type of ReportTypes) {
         let typeText = `\n`;
         
-        let totalType = 0;
-
         if (summarizedData[type]) {
             for (const group in summarizedData[type]) {
-                const { group: groupName, voltage } = summarizedData[type][group];
-                let voltageValue = Math.abs(voltage);
-                if (typeof groupName === 'string' && groupName.includes('Torre Movilnet') && voltageValue  <= 24.0){
-                    typeText += `▪️ *${groupName}:*  \`\`\`${voltageValue} V. ⚠️ \`\`\`\n`;
-                }  
-                if (voltageValue  <= 12.7 ){
-                    typeText += `▪️ *${groupName}:*  \`\`\`${voltageValue} V. ⚠️ \`\`\`\n`;
-                }
-                else {
-                    typeText += `▪️ *${groupName}:*  \`\`\`${voltageValue} V.\`\`\`\n`;
-                }                              
-                totalType += voltageValue; 
+                const data = summarizedData[type][group]; 
+                const groupName = data.group; 
+                const voltage = data.voltage; 
+
+                const voltageValue = Math.abs(voltage); 
+
+                const isWarning = voltageValue <= 12.7 || (typeof groupName === 'string' && groupName.includes('Torre Movilnet') && voltageValue <= 24.0);
+
+                typeText += `▪️ *${groupName}:*  \`\`\`${voltageValue} V. ${isWarning ? '⚠️' : ''}\`\`\`\n`;
             }
         }
         resultText += typeText;
