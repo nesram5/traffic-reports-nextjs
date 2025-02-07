@@ -69,7 +69,10 @@ export function battery_report(summarizedData: any, ReportTypes: any, startTime:
         if (summarizedData[type]) {
             for (const group in summarizedData[type]) {
                 const { group: groupName, voltage } = summarizedData[type][group];
-                let voltageValue = Math.abs(voltage);  
+                let voltageValue = Math.abs(voltage);
+                if (typeof groupName === 'string' && groupName.includes('Torre Movilnet') && voltageValue  <= 24.0){
+                    typeText += `▪️ *${groupName}:*  \`\`\`${voltageValue} V. ⚠️ \`\`\`\n`;
+                }  
                 if (voltageValue  <= 12.7 ){
                     typeText += `▪️ *${groupName}:*  \`\`\`${voltageValue} V. ⚠️ \`\`\`\n`;
                 }
