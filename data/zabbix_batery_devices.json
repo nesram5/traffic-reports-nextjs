@@ -12,7 +12,7 @@
       "group": "Copey Arriba"
     },
     "torre-movilnet": {
-        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=505836&action=showvalues&plaintext=As+plain+text",
+        "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=505836&action=showlatest&plaintext=As+plain+text",
         "name": "Torre Movilnet",
         "type": "Baterias",
         "group": "Torre Movilnet"
