@@ -1,0 +1,4 @@
+No matching timestamp found within the threshold. Infinity
+Cannot connect to http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=486488&action=showvalues&plaintext=As+plain+text value is NULL at 1:15 pm
+
+Error opening link http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=584010&action=showvalues&plaintext=As+plain+text: check the JSON file 2025-02-26 13:15:37

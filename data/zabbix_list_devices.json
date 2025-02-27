@@ -18,7 +18,7 @@
     "group": "Fibex-Valencia (50 Gbps)"
   },
   "TD-Fibex-Maracay": {
-    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=584033&action=showvalues&plaintext=As+plain+text",
+    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=657716&action=showvalues&plaintext=As+plain+text",
     "name": "Fibex-Caribe (4 Gbps)",
     "type": "Transportes",
     "group": "Fibex-Caribe (4 Gbps)"
@@ -31,15 +31,15 @@
   },
   "TD-NetUno-Val": {
     "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=518556&action=showvalues&plaintext=As+plain+text",
-    "name": "Dayco - NetUno (23 Gbps)",
+    "name": "Dayco - NetUno (30 Gbps)",
     "type": "Transportes",
-    "group": "Dayco - NetUno (23 Gbps)"
+    "group": "Dayco - NetUno (30 Gbps)"
   },
   "TD-NetUno-Mcy": {
-    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=519107&action=showvalues&plaintext=As+plain+text",
-    "name": "Caribe - NetUno (8 Gbps)",
+    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=665365&action=showvalues&plaintext=As+plain+text",
+    "name": "Caribe - NetUno (11 Gbps)",
     "type": "Transportes",
-    "group": "Caribe - NetUno (8 Gbps)"
+    "group": "Caribe - NetUno (11 Gbps)"
   },
   "TD-Digitel-PC-TE": {
     "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=655437&action=showvalues&plaintext=As+plain+text",
@@ -48,7 +48,7 @@
     "group": "Pto. Cabello - Digitel (4 Gbps)"
   },
   "TD-Digitel-CEC": {
-    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=487725&action=showvalues&plaintext=As+plain+text",
+    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=655935&action=showvalues&plaintext=As+plain+text",
     "name": "Caribe - Digitel (1 Gbps)",
     "type": "Transportes",
     "group": "Caribe - Digitel (1 Gbps)"
@@ -71,11 +71,11 @@
     "type": "Transportes",
     "group": "Mirador - Netcom Plus (20 Gbps)"
   },
-  "TD-Dayco-MRD-BAK": {
-    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=486488&action=showvalues&plaintext=As+plain+text",
-    "name": "Mirador - Netcom Plus (20 Gbps) Ruta Backup",
+  "TD-Cagua": {
+    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=631869&action=showlatest&plaintext=As+plain+text",
+    "name": "Cagua - Netcom Plus (20 Gbps)",
     "type": "Transportes",
-    "group": "Mirador - Netcom Plus (20 Gbps)"
+    "group": "Cagua - Netcom Plus (20 Gbps)"
   },
   "DCO-BNG": {
     "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=637837&action=showvalues&plaintext=As+plain+text",
@@ -84,7 +84,7 @@
     "group": "DCO BNG"
   },
   "GNM-BNG": {
-    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=509211&action=showvalues&plaintext=As+plain+text",
+    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=553455&action=showvalues&plaintext=As+plain+text",
     "name": "GNM BNG",
     "type": "BNG",
     "group": "GNM BNG"
@@ -167,11 +167,11 @@
     "type": "FTTH",
     "group": "Isla Larga"
   },
-  "FTTH-TE-01-4": {
+  "FTTH-TE-01-5": {
     "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=655569&action=showvalues&plaintext=As+plain+text",
-    "name": "Torre Ejecutiva (OLT-1-2-3-4)",
+    "name": "Torre Ejecutiva (OLT-1-2-3-4-5)",
     "type": "FTTH",
-    "group": "Torre Ejecutiva (OLT-1-2-3-4)"
+    "group": "Torre Ejecutiva (OLT-1-2-3-4-5)"
   },
   "FTTH-SOR": {
     "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=662758&action=showvalues&plaintext=As+plain+text",
@@ -192,7 +192,7 @@
     "group": "La Morita (OLT-5)"
   },
   "FTTH-CGA-01-8": {
-    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=631869&action=showvalues&plaintext=As+plain+text",
+    "link": "http://10.3.0.254/zabbix/history.php?itemids%5B0%5D=672271&action=showlatest&plaintext=As+plain+text",
     "name": "Cagua (OLT-1-2-3-4-5-6-7-8)",
     "type": "FTTH",
     "group": "Cagua (OLT-1-2-3-4-5-6-7-8)"

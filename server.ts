@@ -10,11 +10,11 @@ import { fetchTrafficDataFromDB } from '@/server-modules/handlerDB/fetch';
 import { scheduleExecution } from '@/server-modules/schedule/task';
 
 const port: number = Number(process.env.PORT) || 443;
-const httpPort: number = 80;
+const httpPort: number = 5002;
 const address: string = process.env.SERVER || 'localhost';
 
 const dev = process.env.NODE_ENV !== 'production';
-const app = next({ });
+const app = next({dev });
 const handle = app.getRequestHandler();
 const options = {
   key: fs.readFileSync(path.join(__dirname, 'key.pem')),
@@ -31,9 +31,9 @@ app.prepare().then(() => {
   });
 
   // Establish database connection and fetch initial data
-  connectDB().catch((error) => console.error('Error connecting to DB:', error));
-  fetchTrafficDataFromDB().catch((error) => console.error('Error fetching initial traffic data:', error));
-  scheduleExecution();
+  //connectDB().catch((error) => console.error('Error connecting to DB:', error));
+  //fetchTrafficDataFromDB().catch((error) => console.error('Error fetching initial traffic data:', error));
+  //scheduleExecution();
   // Create HTTP server for redirection to HTTPS
   const httpServer = http.createServer((req, res) => {
     res.writeHead(301, { Location: `https://${address}:${port}${req.url}` });
