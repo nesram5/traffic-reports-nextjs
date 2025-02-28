@@ -1,0 +1,3 @@
+{"level":50,"time":"2025-02-28T20:35:00.223Z","pid":38341,"hostname":"sup-monitoreo-optiplex3050","msg":"Error connecting to the database:"}
+{"level":50,"time":"2025-02-28T20:35:00.228Z","pid":38341,"hostname":"sup-monitoreo-optiplex3050","msg":"Query failed:"}
+{"level":50,"time":"2025-02-28T20:35:00.228Z","pid":38341,"hostname":"sup-monitoreo-optiplex3050","msg":"Error getting latest traffic reports"}

@@ -34,8 +34,8 @@ export const GetReport: React.FC<{ test?: boolean }> = ({ test = false }) => {
             .then(data => {
                 setProgress(100);
                 if (data && data.message) {
-                    setSimpleResult(data.message.simpleResult); 
-                    setDetailedResult(data.message.detailedResult); 
+                    setSimpleResult(data.message); 
+                    setDetailedResult(data.message); 
                 } else {
                     setSimpleResult('Error fetching data.');
                     setDetailedResult('');
@@ -59,8 +59,8 @@ export const GetReport: React.FC<{ test?: boolean }> = ({ test = false }) => {
                 .then(data => {
                     setProgress(100);
                     if (data && data.message) {
-                        setSimpleResult(data.message.simpleResult); 
-                        setDetailedResult(data.message.detailedResult); 
+                        setSimpleResult(data.message); 
+                        setDetailedResult(data.message); 
                     } else {
                         setSimpleResult('Error fetching data.');
                         setDetailedResult('');
