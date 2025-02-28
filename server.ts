@@ -5,7 +5,8 @@ import path from 'path';
 import { parse } from 'url';
 import next from 'next';
 import { port, address, httpPort } from '@/config/env';
-
+import { extractUsdValue } from '@/server-modules/getUSDValue/fetch';
+import schedule from 'node-schedule';
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
@@ -24,10 +25,16 @@ app.prepare().then(() => {
     console.log(`> HTTPS server listening on https://${address}:${port}`);
   });
 
-  // Establish database connection and fetch initial data
-  //connectDB().catch((error) => console.error('Error connecting to DB:', error));
-  //fetchTrafficDataFromDB().catch((error) => console.error('Error fetching initial traffic data:', error));
-  //scheduleExecution();
+  
+  const rule = new schedule.RecurrenceRule();
+  rule.dayOfWeek = [1, 2, 3, 4, 5]; // 1 = Monday, 2 = Tuesday, 5 = Friday
+  rule.hour = 10; // 10:00 AM
+  rule.minute = 0;
+  
+  schedule.scheduleJob(rule, () => {
+    extractUsdValue();
+  });
+
   // Create HTTP server for redirection to HTTPS
   const httpServer = http.createServer((req, res) => {
     res.writeHead(301, { Location: `https://${address}:${port}${req.url}` });

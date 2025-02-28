@@ -6,8 +6,8 @@ const usdFile = path.join(process.cwd(), 'data/usd_bcv.json');
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'GET') {
     try {
-      const data: string = await fs.readFile(usdFile, 'utf8');
-      const usdValue = JSON.parse(data);
+      const data = await fs.readFile(usdFile, 'utf8');
+      const usdValue: { usdValue: string, date: string } = JSON.parse(data);
       return res.status(200).json(usdValue);
     } catch (error: any) {
       if (error instanceof SyntaxError) {
